@@ -23,6 +23,51 @@ header {
     font-weight: 700;
 }
 
+.header {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 55px 0 0 0;
+}
+
+.header .sub-title {
+    background-color: var(--color-1);
+    /* width: 7em; */
+    padding: 0 2em;
+    color: #FFFF;
+}
+
+.body {
+    font-family: var(--font-primary);
+    /* font-size: 1.5rem; */
+    /* text-align: justify; */
+    color: var(--color-5);
+    margin: 0 0 5em 0;
+}
+
+@media screen and (max-width: 767px) {
+
+    .header {
+        font-size: 2rem;
+    }
+    .body {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 390px) {
+
+    .header {
+        font-size: 1.5rem;
+    }
+}
+
 /* Navbar */
 .navbar {
     position: fixed !important;
@@ -32,14 +77,67 @@ header {
     width: 100%;
     font-family: var(--font-primary);
     font-size: 1rem;
-    /* background: rgba(255, 255, 255, 0.25); */
     background-color: #FFFF;
+}
+a.nav-link {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    margin: 0 .2em;
+    padding: .5rem .6rem !important;
+}
+
+.nav-link {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .nav-link:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    background: var(--color-1);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .nav-link:hover {
+    color: white !important;
+  }
+  .nav-link:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+.nav-link.active {
+    color: #FFFF !important;
+    background-color: var(--color-1);
+    border-radius: 5px;
 }
 
 /* Carousel */
 .carousel {
     position: relative;
     margin-top: 55px;
+    overflow-x: hidden;
 }
 
 .bg-carousel {
@@ -51,7 +149,7 @@ header {
 
 .carousel-body {
     position: absolute;
-    bottom: 35%;
+    bottom: 20%;
     left: 12%;
     z-index: 999;
     color: #FFF;
@@ -59,8 +157,24 @@ header {
 
 .carousel-body .title {
     font-family: var(--font-primary);
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 700;
+}
+
+.carousel-body p {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 992px) {
+
+    .carousel-body {
+        bottom: 20%;
+        left: 10%;
+    }
+    .carousel-body .title {
+        font-size: 4rem;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -89,9 +203,6 @@ header {
 
 .about-body {
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     text-align: justify;
 }
 
@@ -103,11 +214,19 @@ header {
 .about p {
     font-family: var(--font-secondary);
     font-size: 1rem;
+    color: var(--color-5);
 }
 
 @media screen and (max-width: 767px) {
     .about header {
         text-align: center;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .about p {
+        font-size: 1.5rem;
     }
 }
 
@@ -141,6 +260,10 @@ header {
     transform: translateY(-20px);
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .20);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, .20);
+}
+
+.berita .card-body p {
+    font-family: var(--font-secondary);
 }
 
 .card-text {
@@ -185,15 +308,21 @@ header {
     font-family: var(--font-secondary);
 }
 
-.berita .title {
+.berita .title-body {
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1rem;
 }
 
+/* Foto Kegiatan */
+.kegiatan {
+    margin: 0 0 7em 0;
+}
+
 /* Program Kerja */
 .proker {
-    margin: 2rem 0 10rem 0;
+    margin: 2rem 0 0 0;
+    background-color: var(--color-1);
 }
 
 .proker-content {
@@ -204,7 +333,7 @@ header {
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1rem;
-    color: var(--color-2);
+    color: black;
 }
 
 .proker-card {
@@ -221,6 +350,8 @@ header {
     justify-content: center;
     align-items: center;
     transition: all 300ms ease;
+    background-color: #FFFF;
+    color: black;
 }
 
 .proker-card-detail:hover {
@@ -232,7 +363,7 @@ header {
     cursor: default;
 }
 
-.proker-card:hover img {
+.proker-card:hover svg {
     transform: rotateY(0deg);
     animation: rotateAnimation 1s linear;
 }
@@ -246,7 +377,7 @@ header {
     z-index: 9;
     height: 100%;
     border-radius: 5px;
-    background-color: var(--color-1);
+    background-color: var(--color-2);
     border: 1px solid var(--color-1);
 }
 
@@ -259,7 +390,6 @@ header {
         content: none;
     }
 }
-
 
 /* Footer */
 footer {
@@ -302,6 +432,35 @@ footer .sosmed a:hover {
 
 footer .sosmed i {
     font-size: 1.5rem;
+}
+
+/* Kontak */
+.kontak .body {
+    font-family: var(--font-primary);
+    color: var(--color-5);
+}
+
+.kontak form {
+    width: 100%;
+    max-width: 20em;
+}
+
+.btn-kirim {
+    padding: 1em 3em;
+    border: none;
+    background-color: var(--color-1);
+    color: #FFFF;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.btn-kirim:hover {
+    background-color: var(--color-2);
+}
+
+.kontak .input-group-text {
+    color: var(--color-5);
 }
 
 @keyframes rotateAnimation {
