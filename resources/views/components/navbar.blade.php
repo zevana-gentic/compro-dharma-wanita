@@ -10,7 +10,7 @@
                 <a class="navbar-brand" href="#">LOGO</a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link {{ Route::is('index') ? 'active' : '' }}" aria-current="page" href="{{ route('index') }}">Beranda</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -60,7 +60,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Berita</a>
+                        <a class="nav-link {{ Route::is('news') ? 'active' : '' }}" href="{{ route('news') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -83,7 +83,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link {{ Route::is('contact-us') ? 'active' : '' }}" href="{{ route('contact-us') }}">Kontak Kami</a>
                     </li>
                 </ul>
                 <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
