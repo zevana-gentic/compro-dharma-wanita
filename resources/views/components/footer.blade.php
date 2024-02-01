@@ -9,7 +9,7 @@
                     <a href="" class="sosmed"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <header class="mb-2">Link Terkait</header>
                 <div class="section">
                     <div class="footer-body">Profil</div>
@@ -20,6 +20,10 @@
                     <div class="footer-body">Informasi</div>
                     <div class="footer-body">Kontak Kami</div>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <header class="mb-2">Visitor</header>
+                <div class="visitor">Hari ini: Bulan ini: Tahun ini:</div>
             </div>
             <div class="copyright text-center my-5">2024 Copyright - Lorem ipsum</div>
         </div>

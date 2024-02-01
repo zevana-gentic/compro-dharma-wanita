@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    @include('components.top-navbar')
     @include('components.navbar')
 
     <main>

@@ -140,10 +140,29 @@ header {
     }
 }
 
-
 /* End of Login, Register */
 
+/* Top section Logo, Date */
+
+.top-navbar {
+    display: block;
+    background-color: var(--color-1);
+    font-family: var(--font-primary);
+    /* color: rgba(0, 0, 0, 0.65); */
+    color: #FFFF;
+}
+
+@media screen and (max-width: 767px) {
+
+    .top-navbar {
+        display: none;
+    }
+}
+
+/* End of Top section Logo, Date */
+
 /* Navbar */
+
 .navbar {
     position: sticky !important;
     top: 0;
@@ -154,6 +173,7 @@ header {
     font-size: 1rem;
     background-color: #FFFF;
 }
+
 a.nav-link {
     font-family: var(--font-primary);
     font-weight: 700;
@@ -207,6 +227,32 @@ a.nav-link {
     background-color: var(--color-1);
     border-radius: 5px;
 }
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: var(--color-1) !important;
+}
+
+.dropdown-item:hover {
+    color: #FFFF !important;
+    background-color: var(--color-1) !important;
+}
+
+.navbar .navbar-brand {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+
+    .navbar .navbar-brand {
+        display: inline-block;
+    }
+    .nav-item {
+        margin: 2px 0;
+    }
+
+}
+
+/* End of Navbar */
 
 /* Carousel */
 .carousel {
