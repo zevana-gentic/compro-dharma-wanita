@@ -16,9 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-// Route::get('/', function () {
-//     return view('layouts.landing');
-// });
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
 Route::get('/news', [LandingController::class, 'news'])->name('news');
@@ -38,6 +35,8 @@ Route::get('/galeri-video', [LandingController::class, 'gallery_video'])->name('
 Route::get('/informasi-eksternal', [LandingController::class, 'external_information'])->name('external_information');
 Route::get('/informasi-internal', [LandingController::class, 'internal_information'])->name('internal_information');
 
-
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
