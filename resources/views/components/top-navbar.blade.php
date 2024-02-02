@@ -11,7 +11,7 @@
                     <span class="ms-2 fw-bold fs-5">Dharma Wanita Persatuan</span>
                 </a>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <span class="fs-6 me-2"><i class="fa-regular fa-calendar me-1"></i>01 Februari 2024</span>
+                  <span class="fs-6 me-2"><i class="fa-regular fa-calendar me-1"></i>@currentDate</span>
                 </ul>
             </div>
         </div>
