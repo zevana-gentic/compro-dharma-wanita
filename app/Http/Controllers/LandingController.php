@@ -27,116 +27,116 @@ class LandingController extends Controller
         return view('contact-us', $data);
     }
 
-    public function sejarah()
+    public function history()
     {
         $data['page_title'] = 'Profil';
         $data['page_sub_title'] = 'Sejarah';
 
-        return view('profil.sejarah', $data);
+        return view('profile.history', $data);
     }
 
-    public function visi_misi()
+    public function vision_mission()
     {
         $data['page_title'] = 'Profil';
         $data['page_sub_title'] = 'Visi & Misi';
 
-        return view('profil.visi-misi', $data);
+        return view('profile.vision-mission', $data);
     }
 
-    public function tugas_fungsi()
+    public function task_functions()
     {
         $data['page_title'] = 'Profil';
         $data['page_sub_title'] = 'Tugas & fungsi';
 
-        return view('profil.tugas-fungsi', $data);
+        return view('profile.task-functions', $data);
     }
 
-    public function struktur_organisasi()
+    public function organization()
     {
         $data['page_title'] = 'Profil';
         $data['page_sub_title'] = 'Struktur Organisasi';
 
-        return view('profil.struktur-organisasi', $data);
+        return view('profile.organization', $data);
     }
 
-    public function sekretariat()
+    public function secretariat()
     {
         $data['page_title'] = 'Unsur Pelaksana';
         $data['page_sub_title'] = 'DWP Sekretariat Daerah';
 
-        return view('pelaksana.sekretariat', $data);
+        return view('implementer.secretariat', $data);
     }
 
-    public function inspektorat()
+    public function inspectorate()
     {
         $data['page_title'] = 'Unsur Pelaksana';
         $data['page_sub_title'] = 'DWP Inspektorat';
 
-        return view('pelaksana.inspektorat', $data);
+        return view('implementer.inspectorate', $data);
     }
 
-    public function dinas_pendidikan()
+    public function education_office()
     {
         $data['page_title'] = 'Unsur Pelaksana';
         $data['page_sub_title'] = 'DWP Dinas Pendidikan';
 
-        return view('pelaksana.dinas-pendidikan', $data);
+        return view('implementer.education-office', $data);
     }
 
-    public function pendidikan()
+    public function education()
     {
         $data['page_title'] = 'Program Kerja';
         $data['page_sub_title'] = 'Bidang Pendidikan';
 
-        return view('proker.pendidikan', $data);
+        return view('work-program.education', $data);
     }
 
-    public function sosial_budaya()
+    public function socio_cultural()
     {
         $data['page_title'] = 'Program Kerja';
         $data['page_sub_title'] = 'Bidang Sosial Budaya';
 
-        return view('proker.sosial-budaya', $data);
+        return view('work-program.socio-cultural', $data);
     }
 
-    public function ekonomi()
+    public function economy()
     {
         $data['page_title'] = 'Program Kerja';
         $data['page_sub_title'] = 'Bidang Ekonomi';
 
-        return view('proker.ekonomi', $data);
+        return view('work-program.economy', $data);
     }
 
-    public function galeri_foto()
+    public function gallery_photo()
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Foto';
 
-        return view('galeri.foto', $data);
+        return view('gallery.photo', $data);
     }
 
-    public function galeri_video()
+    public function gallery_video()
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Video';
 
-        return view('galeri.video', $data);
+        return view('gallery.video', $data);
     }
 
-    public function informasi_eksternal()
+    public function external_information()
     {
         $data['page_title'] = 'Informasi';
         $data['page_sub_title'] = 'Informasi Eksternal';
 
-        return view('informasi.eksternal', $data);
+        return view('information.external', $data);
     }
 
-    public function informasi_internal()
+    public function internal_information()
     {
         $data['page_title'] = 'Informasi';
         $data['page_sub_title'] = 'Informasi Internal';
 
-        return view('informasi.internal', $data);
+        return view('information.internal', $data);
     }
 
 }

@@ -23,7 +23,9 @@
             </div>
             <div class="col-md-4">
                 <header class="mb-2">Visitor</header>
-                <div class="visitor">Hari ini: Bulan ini: Tahun ini:</div>
+                <h6>Hari ini:</h6>
+                <h6>Bulan ini:</h6>
+                <h6>Tahun ini:</h6>
             </div>
             <div class="copyright text-center my-5">2024 Copyright - Lorem ipsum</div>
         </div>

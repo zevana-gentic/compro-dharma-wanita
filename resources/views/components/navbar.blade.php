@@ -13,49 +13,49 @@
                             href="{{ route('index') }}">Beranda</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ Route::is(['sejarah', 'visi_misi', 'tugas_fungsi', 'struktur_organisasi']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Route::is(['history', 'vision_mission', 'task_functions', 'organization']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Profil
                         </a>
 
                         <ul class="dropdown-menu">
 
-                            <li><a class="dropdown-item {{ Route::is('sejarah') ? 'active' : '' }}" href="{{ route('sejarah') }}">Sejarah</a></li>
-                            <li><a class="dropdown-item {{ Route::is('visi_misi') ? 'active' : '' }}" href="{{ route('visi_misi') }}">Visi dan Misi</a></li>
+                            <li><a class="dropdown-item {{ Route::is('history') ? 'active' : '' }}" href="{{ route('history') }}">Sejarah</a></li>
+                            <li><a class="dropdown-item {{ Route::is('vision_mission') ? 'active' : '' }}" href="{{ route('vision_mission') }}">Visi dan Misi</a></li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('tugas_fungsi') ? 'active' : '' }}" href="{{ route('tugas_fungsi') }}">Tugas dan Fungsi</a>
+                                <a class="dropdown-item {{ Route::is('task_functions') ? 'active' : '' }}" href="{{ route('task_functions') }}">Tugas dan Fungsi</a>
                             </li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('struktur_organisasi') ? 'active' : '' }}" href="{{ route('struktur_organisasi') }}">Struktur Organisasi</a>
+                                <a class="dropdown-item {{ Route::is('organization') ? 'active' : '' }}" href="{{ route('organization') }}">Struktur Organisasi</a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ Route::is(['sekretariat', 'inspektorat', 'dinas_pendidikan']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Route::is(['secretariat', 'inspectorate', 'education_office']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Unsur Pelaksana
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item {{ Route::is('sekretariat') ? 'active' : '' }}" href="{{ route('sekretariat') }}">DWP Sekretariat Daerah</a>
+                                <a class="dropdown-item {{ Route::is('secretariat') ? 'active' : '' }}" href="{{ route('secretariat') }}">DWP Sekretariat Daerah</a>
                             </li>
-                            <li><a class="dropdown-item {{ Route::is('inspektorat') ? 'active' : '' }}" href="{{ route('inspektorat') }}">DWP Inspektorat</a></li>
+                            <li><a class="dropdown-item {{ Route::is('inspectorate') ? 'active' : '' }}" href="{{ route('inspectorate') }}">DWP Inspektorat</a></li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('dinas_pendidikan') ? 'active' : '' }}" href="{{ route('dinas_pendidikan') }}">DWP Dinas Pendidikan</a>
+                                <a class="dropdown-item {{ Route::is('education_office') ? 'active' : '' }}" href="{{ route('education_office') }}">DWP Dinas Pendidikan</a>
                             </li>
                             {{-- <li><a class="dropdown-item" href="#">Dst</a></li> --}}
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ Route::is(['pendidikan', 'sosial_budaya', 'ekonomi']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Route::is(['education', 'socio_cultural', 'economy']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Program Kerja
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item {{ Route::is('pendidikan') ? 'active' : '' }}" href="{{ route('pendidikan') }}">Bidang Pendidikan</a>
+                                <a class="dropdown-item {{ Route::is('education') ? 'active' : '' }}" href="{{ route('education') }}">Bidang Pendidikan</a>
                             </li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('sosial_budaya') ? 'active' : '' }}" href="{{ route('sosial_budaya') }}">Bidang Sosial Budaya</a>
+                                <a class="dropdown-item {{ Route::is('socio_cultural') ? 'active' : '' }}" href="{{ route('socio_cultural') }}">Bidang Sosial Budaya</a>
                             </li>
-                            <li><a class="dropdown-item {{ Route::is('ekonomi') ? 'active' : '' }}" href="{{ route('ekonomi') }}">Bidang Ekonomi</a></li>
+                            <li><a class="dropdown-item {{ Route::is('economy') ? 'active' : '' }}" href="{{ route('economy') }}">Bidang Ekonomi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -63,21 +63,21 @@
                             href="{{ route('news') }}">Berita</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ Route::is(['galeri_foto', 'galeri_video']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Route::is(['gallery_photo', 'gallery_video']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Galeri
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{ Route::is('galeri_foto') ? 'active' : '' }}" href="{{ route('galeri_foto') }}">Galeri Foto</a></li>
-                            <li><a class="dropdown-item {{ Route::is('galeri_video') ? 'active' : '' }}" href="{{ route('galeri_video') }}">Galeri Video</a></li>
+                            <li><a class="dropdown-item {{ Route::is('gallery_photo') ? 'active' : '' }}" href="{{ route('gallery_photo') }}">Galeri Foto</a></li>
+                            <li><a class="dropdown-item {{ Route::is('gallery_video') ? 'active' : '' }}" href="{{ route('gallery_video') }}">Galeri Video</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link {{ Route::is(['informasi_eksternal', 'informasi_internal']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ Route::is(['external_information', 'internal_information']) ? 'active' : '' }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Informasi
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item {{ Route::is('informasi_eksternal') ? 'active' : '' }}" href="{{ route('informasi_eksternal') }}">Eksternal</a></li>
-                            <li><a class="dropdown-item {{ Route::is('informasi_internal') ? 'active' : '' }}" href="{{ route('informasi_internal') }}">Internal</a></li>
+                            <li><a class="dropdown-item {{ Route::is('external_information') ? 'active' : '' }}" href="{{ route('external_information') }}">Eksternal</a></li>
+                            <li><a class="dropdown-item {{ Route::is('internal_information') ? 'active' : '' }}" href="{{ route('internal_information') }}">Internal</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
