@@ -1,30 +1,66 @@
 @extends('layouts.auth')
 
 @section('title')
-    Register
+    Daftar
 @endsection
 
 @section('content')
-<form>
-    <div class="mb-3">
-        <label for="name" class="form-label">Nama</label>
-        <input type="text" class="form-control" id="name">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="email">
-    </div>
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password">
-    </div>
-    <div class="mb-3">
-        <label for="confirm_password" class="form-label">Konfirmasi Password</label>
-        <input type="password" class="form-control" id="confirm_password">
-    </div>
-    <div class="mb-3">
-        <a href="/login">Sudah mempunyai akun? Masuk</a>
-    </div>
-    <button type="submit" class="btn-auth fw-bold w-100">Submit</button>
-</form>
+    <form action="{{ route('register') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="name" class="form-label">Nama :</label>
+            <input type="text" name="name" class="form-control" id="name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email :</label>
+            <input type="email" name="email" class="form-control" id="email">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password :</label>
+            <div class="form-group" style="position: relative;">
+                <input name="password" type="password" class="form-control" id="password-field">
+                <span toggle="#password-field" class="fa-solid fa-eye toggle-password"
+                    style="position: absolute; right:20px; top:10px;">
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password_confirmation" class="form-label">Konfirmasi Password :</label>
+            <div class="form-group mb-3" style="position: relative;">
+                <input name="password_confirmation" type="password" class="form-control" required id="password-field-1">
+                <span toggle="#password-field-1" class="fa fa-fw fa-eye field-icon toggle-password1"
+                    style="position: absolute; right:20px; top:10px;">
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn-auth fw-bold w-100">Daftar</button>
+        </div>
+    </form>
+    <p class="text-center">Sudah mempunyai akun? <a href="{{ route('login') }}" class="text-decoration-none" style="color: #FFBB5C;"><b>Masuk</b></a></p>
+@endsection
+
+@section('js')
+    <script>
+         $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+        $(".toggle-password1").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
 @endsection

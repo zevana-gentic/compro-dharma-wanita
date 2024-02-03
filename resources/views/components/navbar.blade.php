@@ -85,14 +85,28 @@
                             href="{{ route('contact-us') }}">Kontak Kami</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">register</a>
-                    </li>
-                </ul>
+                @guest
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">Daftar</a>
+                        </li>
+                    </ul>
+                @else
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Hi, {{ Auth::user()->name }} !
+                        </a>
+                        <li class="nav-item">
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="nav-link">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                @endguest
             </div>
         </div>
     </div>
