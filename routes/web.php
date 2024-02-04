@@ -4,12 +4,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AuthController;
 
 // Admin
 use App\Http\Controllers\Admin\DashboardController as DashboardAdmin;
 use App\Http\Controllers\Admin\NewsController as NewsAdmin;
 use App\Http\Controllers\Admin\GalleryController as GalleryAdmin;
 use App\Http\Controllers\Admin\DWPMemberController;
+
+// Member
+use App\Http\Controllers\Member\DashboardController as DashboardMember;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +26,15 @@ use App\Http\Controllers\Admin\DWPMemberController;
 |
 */
 
-Auth::routes();
+// Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/login/submit', 'login_submit')->name('login.submit');
+    Route::get('/register', 'register')->name('register');
+    Route::post('/register/submit', 'register_submit')->name('register.submit');
+    Route::get('/logout', 'logout')->name('logout');
+});
 
 Route::controller(PagesController::class)->group(function () {
     Route::get('/', 'index')->name('index');
@@ -45,7 +56,7 @@ Route::controller(PagesController::class)->group(function () {
     Route::get('/informasi-internal', 'internal_information')->name('internal_information');
 });
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('admin/')->group(function () {
         Route::get('dashboard', [DashboardAdmin::class, 'dashboard'])->name('admin.dashboard');
 
@@ -63,6 +74,11 @@ Route::middleware(['auth'])->group(function () {
             Route::get('list', [DWPMemberController::class, 'dwp_member_list'])->name('list');
         });
     });
+});
 
+Route::middleware(['auth', 'member'])->group(function () {
+    Route::prefix('member/')->group(function () {
+        Route::get('dashboard', [DashboardMember::class, 'dashboard'])->name('member.dashboard');
+    });
 });
 

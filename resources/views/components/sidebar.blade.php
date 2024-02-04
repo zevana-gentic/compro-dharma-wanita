@@ -20,8 +20,8 @@
             </li>
 
             <li class="nav-item nav-category">Manajemen Konten</li>
-            <li class="nav-item {{ Route::is('news.*') ? 'active' : '' }}">
-                <a href="{{ route('news.list') }}" class="nav-link">
+            <li class="nav-item">
+                <a href="" class="nav-link">
                   <i class="link-icon" data-feather="file-text"></i>
                   <span class="link-title">Berita</span>
                 </a>

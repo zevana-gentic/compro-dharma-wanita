@@ -5,11 +5,22 @@
 @endsection
 
 @section('content')
-    <form action="" method="POST">
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <strong>{{ $message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @elseif ($message = Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <strong>{{ $message }}</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    <form action="{{ route('login.submit') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="email" class="form-label">Email :</label>
-            <input type="email" name="email" class="form-control" id="email">
+            <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="email">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password :</label>

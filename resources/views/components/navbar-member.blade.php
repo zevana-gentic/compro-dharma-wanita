@@ -93,13 +93,13 @@
                                     <i data-feather="user"></i>
                                     <span>Profile</span>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="" class="nav-link">
                                     <i data-feather="edit"></i>
-                                    <span>Edit Profile</span>
+                                    <span>Edit Profil</span>
                                 </a>
-                            </li> --}}
+                            </li>
                             <li class="nav-item">
                                 <a href="{{ route('logout') }}" class="nav-link">
                                     <i data-feather="log-out"></i>

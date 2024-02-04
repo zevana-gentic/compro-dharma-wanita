@@ -1,13 +1,13 @@
-@extends('layouts.admin-dashboard')
+@extends('layouts.member-dashboard')
 @section('title')
-    Dashboard Admin
+    Dashboard Member
 @endsection
 
 @section('content')
     <div class="page-content">
         <div class="d-flex justify-content-between align-items-center flex-wrap grid-margin">
             <div>
-                <h4 class="mb-3 mb-md-0">Selamat Datang di Dashboard Admin DWP</h4>
+                <h4 class="mb-3 mb-md-0">Selamat Datang di Dashboard Member DWP</h4>
             </div>
             {{-- <div class="d-flex align-items-center flex-wrap text-nowrap">
             <div class="input-group date datepicker dashboard-date mr-2 mb-2 mb-md-0 d-md-none d-xl-flex"
@@ -106,46 +106,5 @@
                 </div>
             </div>
         </div>
-
-        <div class="mb-3">
-            <h5>Anggota Terbaru</h5>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nama Anggota</th>
-                                        <th>Email</th>
-                                        <th>Tanggal Registrasi</th>
-                                        <th>Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($members as $item)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $item->name }}</td>
-                                            <td class="text-warning"><b>{{ $item->email }}</b></td>
-                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y (h:i:s A)') }}</td>
-                                            <td><span class="badge {{ $item->verified_at ? 'badge-success' : 'badge-danger' }}">{{ $item->verified_at ? 'Sudah Verifikasi' : 'Belum Verifikasi Email'}}</span></td>
-                                        </tr>
-                                    @empty
-                                        <tr>
-                                            <td colspan="5" class="text-center">Belum ada data anggota.</td>
-                                        </tr>
-                                    @endforelse
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- row -->
-
     </div>
 @endsection

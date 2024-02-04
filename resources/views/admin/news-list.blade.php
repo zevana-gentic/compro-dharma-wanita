@@ -8,25 +8,25 @@
     <div class="container">
         <div class="justify-content-between align-items-center flex-wrap grid-margin">
             <div>
-                <h4 class="mb-3 mb-md-0">List Berita</h4>
-                <br>
-                <div class="row">
+                <h4>List Berita</h4>
+                <div class="row mt-3">
                     <div class="col-md-2">
                         <a href="" class="btn btn-primary btn-md" title="Tambah Berita">
                             <i class="mr-1" data-feather="plus-circle" style="width: 20px; height:20px;"></i>
                             Tambah Berita
                         </a>
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                         <form action="{{ url()->current() }}" method="GET">
                             <div class="input-group ml-1 mb-3 row justify-content right">
                                 <select name="category" id="category">
-                                    <option value="">Select a Category</option>
+                                    <option value="">Pilih Kategori</option>
                                 </select>
-                                <input type="text" class="form-control" placeholder="Publisher" id="publisher" name="publisher" value="{{ isset($_GET['publisher']) ? $_GET['publisher'] : '' }}">
-                                <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="{{ isset($_GET['title']) ? $_GET['title'] : '' }}">
+                                <input type="text" class="form-control" placeholder="Cari Berita" name="q">
+                                {{-- <input type="text" class="form-control" placeholder="Publisher" id="publisher" name="publisher" value="{{ isset($_GET['publisher']) ? $_GET['publisher'] : '' }}"> --}}
+                                {{-- <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="{{ isset($_GET['title']) ? $_GET['title'] : '' }}"> --}}
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-primary" type="submit" value="search" title="Search">Search</button>
+                                    <button class="btn btn-outline-primary" type="submit" value="search" title="Search">Cari</button>
                                 </div>
                             </div>
                         </form>
@@ -57,12 +57,12 @@
                     <table class="table table-bordered table-striped table-hover" width="500px">
                         <thead>
                             <tr>
-                                {{-- <th>Header Image</th>
-                                <th>Category</th>
-                                <th>Title</th>
-                                <th>Publisher</th>
-                                <th>Date Post</th>
-                                <th>Action</th> --}}
+                                <th>Gambar Thumbnail</th>
+                                <th>Judul</th>
+                                <th>Kategori</th>
+                                <th>Penulis</th>
+                                <th>Tanggal Posting</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>

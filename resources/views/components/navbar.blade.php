@@ -100,10 +100,7 @@
                             Hi, {{ Auth::user()->name }} !
                         </a>
                         <li class="nav-item">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="nav-link">Logout</button>
-                            </form>
+                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                         </li>
                     </ul>
                 @endguest

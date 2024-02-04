@@ -5,15 +5,30 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('register') }}" method="POST">
+    @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <strong>Terjadi kesalahan saat pengisian form.
+                <br>
+                Data yang masih salah akan ditandai dengan tulisan merah, silahkan cek kembali.
+            </strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    <form action="{{ route('register.submit') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nama :</label>
-            <input type="text" name="name" class="form-control" id="name">
+            <input type="text" name="name" class="form-control" id="name" value="{{ old('name') }}">
+            @error('name')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">Email :</label>
-            <input type="email" name="email" class="form-control" id="email">
+            <input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}">
+            @error('email')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Password :</label>
@@ -23,6 +38,9 @@
                     style="position: absolute; right:20px; top:10px;">
                 </span>
             </div>
+            @error('password')
+                <small class="text-danger">{{ $message }}</small>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="password_confirmation" class="form-label">Konfirmasi Password :</label>
