@@ -35,7 +35,7 @@
             <div class="form-group" style="position: relative;">
                 <input name="password" type="password" class="form-control" id="password-field">
                 <span toggle="#password-field" class="fa-solid fa-eye toggle-password"
-                    style="position: absolute; right:20px; top:10px;">
+                    style="position: absolute; right:20px; top:10px; cursor: pointer;">
                 </span>
             </div>
             @error('password')
@@ -47,7 +47,7 @@
             <div class="form-group mb-3" style="position: relative;">
                 <input name="password_confirmation" type="password" class="form-control" required id="password-field-1">
                 <span toggle="#password-field-1" class="fa fa-fw fa-eye field-icon toggle-password1"
-                    style="position: absolute; right:20px; top:10px;">
+                    style="position: absolute; right:20px; top:10px; cursor: pointer;">
                 </span>
             </div>
         </div>

@@ -19,6 +19,11 @@ class PagesController extends Controller
         return view('news', $data);
     }
 
+    public function news_detail()
+    {
+        return view('news.news-detail');
+    }
+
     public function contact_us()
     {
         $data['page_title'] = 'Kontak';

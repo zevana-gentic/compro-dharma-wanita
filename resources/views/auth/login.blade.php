@@ -27,7 +27,7 @@
             <div class="form-group" style="position: relative;">
                 <input name="password" type="password" class="form-control" id="password-field">
                 <span toggle="#password-field" class="fa-solid fa-eye toggle-password"
-                    style="position: absolute; right:20px; top:10px;">
+                    style="position: absolute; right:20px; top:10px; cursor: pointer;">
                 </span>
             </div>
         </div>

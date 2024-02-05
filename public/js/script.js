@@ -17,3 +17,11 @@ $(".owl-carousel").owlCarousel({
         },
     },
 });
+
+
+// LightGallery
+let gallery = document.getElementById('gallery')
+lightGallery(gallery, {
+    controls: true,
+    plugins: [lgThumbnail]
+})

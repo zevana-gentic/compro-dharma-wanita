@@ -23,7 +23,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -47,7 +47,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -71,7 +71,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -95,7 +95,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -119,7 +119,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -143,7 +143,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -167,7 +167,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="{{ route('news_detail') }}" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>
@@ -192,7 +192,7 @@
                     <i class="fa-regular fa-calendar-days"></i>
                     <div class="ms-1">23 JAN 2024</div>
                   </div>
-                  <a href="#" class="selengkapnya w-50 text-end"
+                  <a href="/news/detail" class="selengkapnya w-50 text-end"
                     >Selengkapnya<i class="fa-solid fa-angle-right ms-1"></i
                   ></a>
                 </div>

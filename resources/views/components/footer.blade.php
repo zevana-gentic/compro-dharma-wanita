@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <img src="assets/notfound.png" alt="" class="img-footer" />
+                <img src="{{ asset('assets/logo.png') }}" alt="" class="img-footer" />
                 <p class="title mt-2">Dharma Wanita Persatuan</p>
                 <p class="mt-2">Alamat</p>
                 <div class="sosmed">

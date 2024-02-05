@@ -39,6 +39,7 @@ Route::controller(AuthController::class)->group(function () {
 Route::controller(PagesController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/news', 'news')->name('news');
+    Route::get('/news/detail', 'news_detail')->name('news_detail');
     Route::get('/contact-us', 'contact_us')->name('contact-us');
     Route::get('/sejarah', 'history')->name('history');
     Route::get('/visi-misi', 'vision_mission')->name('vision_mission');
