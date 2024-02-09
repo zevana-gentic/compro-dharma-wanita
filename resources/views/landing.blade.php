@@ -100,7 +100,7 @@
         <div class="container">
             <header class="text-center">Berita Terbaru</header>
             <div class="d-flex justify-content-end">
-                <button class="btn btn-outline-success my-3">Lihat Semua</button>
+                <a href="{{ route('news_detail') }}" class="btn-see-all my-3">Lihat Semua</a>
             </div>
             <div class="berita-content">
                 <div class="row">
