@@ -15,7 +15,7 @@ class NewsController extends Controller
 {
     public function news_list()
     {
-        $data['news'] = News::get();
+        $data['news'] = News::paginate(10)->withQueryString();
 
         return view('admin.news-list', $data);
     }
@@ -53,7 +53,7 @@ class NewsController extends Controller
 
         $data = $request->all();
 
-        $data['slug'] = Str::slug($request->title);
+        $data['slug'] = Str::slug($request->title).'-'.Str::random(5);
 
         if ($request->image_thumbnail) {
             $filename = Storage::disk('public_uploads')->put('image-thumbnail', $request->image_thumbnail);

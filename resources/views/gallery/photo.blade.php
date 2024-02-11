@@ -6,21 +6,19 @@
             @include('components.section-header')
             <div class="body d-flex flex-column align-items-center">
                 <div class="d-flex justify-content-center">
-                        <div id="gallery" class="text-center">
-                            <a href="{{ asset('assets/notfound.png') }}">
-                                <img src="{{asset('assets/notfound.png')}}" height="250" alt="" class="mt-1">
+                    <div id="gallery" class="text-center">
+                        @foreach ($gallery_photos as $item)
+                            <a href="{{ asset('uploads/'. $item->photo) }}">
+                                <img src="{{ asset('uploads/'. $item->photo) }}" height="250" alt="" class="mt-1">
                             </a>
-                            <a href="{{ asset('assets/notfound.png') }}">
-                                <img src="{{asset('assets/notfound.png')}}" height="250" alt="" class="mt-1">
-                            </a>
-                            <a href="{{ asset('assets/notfound.png') }}">
-                                <img src="{{asset('assets/notfound.png')}}" height="250" alt="" class="mt-1">
-                            </a>
-                            <a href="{{ asset('assets/notfound.png') }}">
-                                <img src="{{asset('assets/notfound.png')}}" height="250" alt="" class="mt-1">
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
+                </div>
+                @if ($gallery_photos->count() > 0)
+                    <div class="mt-5">
+                        {{ $gallery_photos->links('components.pagination') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

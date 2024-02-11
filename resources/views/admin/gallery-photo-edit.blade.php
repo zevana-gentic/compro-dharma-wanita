@@ -17,28 +17,7 @@
         <div class="container">
             <div class="justify-content-between align-items-center flex-wrap grid-margin">
                 <div>
-                    <h4>Tambah Galeri - Foto</h4>
-                    {{-- <div class="row mt-3">
-                    <div class="col-md-2">
-                        <a href="" class="btn btn-primary btn-md" title="Tambah Berita">
-                            <i class="mr-1" data-feather="plus-circle" style="width: 20px; height:20px;"></i>
-                            Tambah Berita
-                        </a>
-                    </div>
-                    <div class="col-md-8">
-                        <form action="{{ url()->current() }}" method="GET">
-                            <div class="input-group ml-1 mb-3 row justify-content right">
-                                <select name="category" id="category">
-                                    <option value="">Pilih Kategori</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="Cari Berita" name="q">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-primary" type="submit" value="search" title="Search">Cari</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> --}}
+                    <h4>Ubah Data Foto</h4>
                 </div>
             </div>
 
@@ -60,19 +39,19 @@
 
             <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('gallery.photo.submit') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('gallery.photo.update', $gallery_photo->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="photo" class="form-label">Gambar<span class="text-sm text-danger">*</span></label>
                             @error('photo')
                                 <div class="text-danger small">{{ $message }}</div>
                             @enderror
-                            <input name="photo" type="file" class="form-control" id="myDropify">
+                            <input name="photo" type="file" class="form-control" id="myDropify" data-default-file="{{ asset('uploads/'.$gallery_photo->photo) }}"">
                             <small class="text-primary">(Format: jpg, jpeg atau png. Ukuran gambar maks. 2MB. Gambar menggunakan layout landscape)</small>
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('gallery.photo.list') }}" class="btn btn-secondary mr-2">Kembali</a>
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-primary">Ubah</button>
                         </div>
                     </form>
 

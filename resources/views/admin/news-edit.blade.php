@@ -105,7 +105,7 @@
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('news.list') }}" class="btn btn-secondary mr-2">Kembali</a>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Ubah</button>
                         </div>
                     </form>
 

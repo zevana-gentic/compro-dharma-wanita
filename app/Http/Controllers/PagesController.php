@@ -2,26 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
+use App\Models\Slider;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index()
     {
-        return view('landing');
+        $data['sliders'] = Slider::get();
+
+        return view('landing', $data);
     }
 
     public function news()
     {
         $data['page_title'] = 'Berita';
         $data['page_sub_title'] = 'Berita Terbaru';
+        $data['news'] = News::latest()->paginate(8)->withQueryString();
 
         return view('news', $data);
     }
 
-    public function news_detail()
+    public function news_detail($slug)
     {
-        return view('news.news-detail');
+        $data['news'] = News::where('slug', $slug)->first();
+        $data['recent_news'] = News::orderBy('created_at', 'desc')->take(3)->get();
+
+        return view('news.news-detail', $data);
     }
 
     public function contact_us()
@@ -116,6 +125,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Foto';
+        $data['gallery_photos'] = Gallery::where('category', 'Foto')->paginate(6)->withQueryString();
 
         return view('gallery.photo', $data);
     }
@@ -124,6 +134,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Video';
+        $data['gallery_videos'] = Gallery::where('category', 'Video')->paginate(4)->withQueryString();
 
         return view('gallery.video', $data);
     }

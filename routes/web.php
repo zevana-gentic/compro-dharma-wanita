@@ -10,6 +10,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController as DashboardAdmin;
 use App\Http\Controllers\Admin\NewsController as NewsAdmin;
 use App\Http\Controllers\Admin\GalleryController as GalleryAdmin;
+use App\Http\Controllers\Admin\SliderController as SliderAdmin;
 use App\Http\Controllers\Admin\DWPMemberController;
 
 // Member
@@ -36,25 +37,25 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
 });
 
-Route::controller(PagesController::class)->group(function () {
+Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/news', 'news')->name('news');
-    Route::get('/news/detail', 'news_detail')->name('news_detail');
+    Route::get('/berita', 'news')->name('news');
+    Route::get('/berita/{slug}', 'news_detail')->name('news-detail');
     Route::get('/contact-us', 'contact_us')->name('contact-us');
     Route::get('/sejarah', 'history')->name('history');
-    Route::get('/visi-misi', 'vision_mission')->name('vision_mission');
-    Route::get('/tugas-fungsi', 'task_functions')->name('task_functions');
+    Route::get('/visi-misi', 'vision_mission')->name('vision-mission');
+    Route::get('/tugas-fungsi', 'task_functions')->name('task-functions');
     Route::get('/struktur-organisasi', 'organization')->name('organization');
     Route::get('/sekretariat-daerah', 'secretariat')->name('secretariat');
     Route::get('/inspektorat', 'inspectorate')->name('inspectorate');
-    Route::get('/dinas-pendidikan', 'education_office')->name('education_office');
+    Route::get('/dinas-pendidikan', 'education_office')->name('education-office');
     Route::get('/pendidikan', 'education')->name('education');
-    Route::get('/sosial-budaya', 'socio_cultural')->name('socio_cultural');
+    Route::get('/sosial-budaya', 'socio_cultural')->name('socio-cultural');
     Route::get('/ekonomi', 'economy')->name('economy');
-    Route::get('/galeri-foto', 'gallery_photo')->name('gallery_photo');
-    Route::get('/galeri-video', 'gallery_video')->name('gallery_video');
-    Route::get('/informasi-eksternal', 'external_information')->name('external_information');
-    Route::get('/informasi-internal', 'internal_information')->name('internal_information');
+    Route::get('/galeri-foto', 'gallery_photo')->name('gallery-photo');
+    Route::get('/galeri-video', 'gallery_video')->name('gallery-video');
+    Route::get('/informasi-eksternal', 'external_information')->name('external-information');
+    Route::get('/informasi-internal', 'internal_information')->name('internal-information');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -72,8 +73,27 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
         Route::prefix('gallery/')->name('gallery.')->group(function () {
             Route::get('photo/list', [GalleryAdmin::class, 'photo_list'])->name('photo.list');
+            Route::get('photo/add', [GalleryAdmin::class, 'photo_add'])->name('photo.add');
+            Route::post('photo/submit', [GalleryAdmin::class, 'photo_submit'])->name('photo.submit');
+            Route::get('photo/edit/{id}', [GalleryAdmin::class, 'photo_edit'])->name('photo.edit');
+            Route::post('photo/update/{id}', [GalleryAdmin::class, 'photo_update'])->name('photo.update');
+            Route::post('photo/delete/{id}', [GalleryAdmin::class, 'photo_delete'])->name('photo.delete');
 
             Route::get('video/list', [GalleryAdmin::class, 'video_list'])->name('video.list');
+            Route::get('video/add', [GalleryAdmin::class, 'video_add'])->name('video.add');
+            Route::post('video/submit', [GalleryAdmin::class, 'video_submit'])->name('video.submit');
+            Route::get('video/edit/{id}', [GalleryAdmin::class, 'video_edit'])->name('video.edit');
+            Route::post('video/update/{id}', [GalleryAdmin::class, 'video_update'])->name('video.update');
+            Route::post('video/delete/{id}', [GalleryAdmin::class, 'video_delete'])->name('video.delete');
+        });
+
+        Route::prefix('slider/')->name('slider.')->group(function () {
+            Route::get('list', [SliderAdmin::class, 'slider_list'])->name('list');
+            Route::get('add', [SliderAdmin::class, 'slider_add'])->name('add');
+            Route::post('submit', [SliderAdmin::class, 'slider_submit'])->name('submit');
+            Route::get('edit/{id}', [SliderAdmin::class, 'slider_edit'])->name('edit');
+            Route::post('update/{id}', [SliderAdmin::class, 'slider_update'])->name('update');
+            Route::post('delete/{id}', [SliderAdmin::class, 'slider_delete'])->name('delete');
         });
 
         Route::prefix('dwp-member/')->name('dwp-member.')->group(function () {
