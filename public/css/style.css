@@ -152,6 +152,10 @@ header {
     color: #FFFF;
 }
 
+.top-navbar span {
+    font-family: var(--font-secondary);
+}
+
 @media screen and (max-width: 767px) {
 
     .top-navbar {
@@ -379,6 +383,21 @@ header {
     align-items: center;
 }
 
+.btn-see-all {
+    background-color: var(--color-1);
+    color: #FFFF;
+    font-family: var(--font-primary);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-see-all:hover {
+    background-color: var(--color-2);
+}
+
 .img-berita {
     width: 100%;
     height: 100%;
@@ -455,6 +474,17 @@ header {
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 1.5rem;
+}
+
+.berita .pagination .page-link {
+    color: var(--color-5);
+    font-family: var(--font-secondary);
+}
+
+.berita .pagination .page-link.active {
+    color: #FFFF;
+    background-color: var(--color-1);
+    border-color: inherit;
 }
 
 /* Detail Berita */
