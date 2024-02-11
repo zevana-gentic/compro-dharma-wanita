@@ -63,6 +63,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
         Route::prefix('news/')->name('news.')->group(function () {
             Route::get('list', [NewsAdmin::class, 'news_list'])->name('list');
+            Route::get('add', [NewsAdmin::class, 'news_add'])->name('add');
+            Route::post('submit', [NewsAdmin::class, 'news_submit'])->name('submit');
+            Route::get('edit/{id}', [NewsAdmin::class, 'news_edit'])->name('edit');
+            Route::post('update/{id}', [NewsAdmin::class, 'news_update'])->name('update');
+            Route::post('delete/{id}', [NewsAdmin::class, 'news_delete'])->name('delete');
         });
 
         Route::prefix('gallery/')->name('gallery.')->group(function () {

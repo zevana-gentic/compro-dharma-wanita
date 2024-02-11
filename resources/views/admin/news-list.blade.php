@@ -11,7 +11,7 @@
                 <h4>List Berita</h4>
                 <div class="row mt-3">
                     <div class="col-md-2">
-                        <a href="" class="btn btn-primary btn-md" title="Tambah Berita">
+                        <a href="{{ route('news.add') }}" class="btn btn-primary btn-md" title="Tambah Berita">
                             <i class="mr-1" data-feather="plus-circle" style="width: 20px; height:20px;"></i>
                             Tambah Berita
                         </a>
@@ -66,35 +66,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($news_content as $no => $news_contents )
-                            <tr>
-                                <td>
-                                    <div class="card">
-                                        <div class="card-body" style="width: 250px; height: 200px; background-image: url('{{ asset('uploads/'.@$news_contents->header_img) }}'); background-size: cover; ">
+                            @foreach ($news as $item)
+                                <tr>
+                                    <td>
+                                        <div class="card">
+                                            <div class="card-body" style="width: 250px; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image_thumbnail) }}'); background-size: cover; ">
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="text-wrap text-capitalize">
-                                    @if ($news_contents['category'] == 'mining')
-                                    <p>Berita Tambang</p>
-                                    @elseif ($news_contents['category'] == 'daily_news')
-                                    <p>Berita Harian</p>
-                                    @elseif ($news_contents['category'] == 'committee')
-                                    <p>Aktivitas - Komite</p>
-                                    @elseif ($news_contents['category'] == 'member')
-                                    <p>Aktivitas - Member</p>
-                                    @endif
-                                </td>
-                                <td class="text-wrap text-capitalize">{{ $news_contents['title'] }}</td>
-                                <td>{{ $news_contents['publisher'] }}</td>
-                                <td>{{ date_format($news_contents->created_at, "d M Y") }}</td>
-                                <td>
-                                    <a class="btn btn-success btn-icon btn-edit mr-2" href="{{ route('news.edit', $news_contents->id, ['id']) }}"><i data-feather="edit"></i></a>
-
-                                    <a class="btn btn-danger btn-hapus btn-icon" data-toggle="modal" data-target="#hapusdata" data-id="{{ $news_contents->id }}"><i data-feather="trash"></i></a>
-                                </td>
-                            </tr>
-                            @endforeach --}}
+                                    </td>
+                                    <td class="text-wrap text-capitalize">{{ $item->title }}</td>
+                                    <td class="text-wrap text-capitalize">{{ $item->category }}</td>
+                                    <td class="text-wrap text-capitalize">{{ $item->author }}</td>
+                                    <td>{{ date_format($item->created_at, "d M Y") }}</td>
+                                    <td>
+                                        <a class="btn btn-success btn-icon btn-edit mr-2" href="{{ route('news.edit', $item->id) }}"><i data-feather="edit"></i></a>
+                                        <a class="btn btn-danger btn-hapus btn-icon" data-toggle="modal" data-target="#hapusdata" data-id="{{ $item->id }}"><i data-feather="trash"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                     <div class="mt-3">
@@ -127,4 +116,38 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('modal')
+  <div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Hapus</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <form action="" method="POST" class="form-delete">
+            @csrf
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus data berita ini?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-danger">Hapus</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+@endsection
+
+@section('js')
+    <script>
+        $('.btn-hapus').on('click', function() {
+            const id = $(this).data('id');
+            $('.form-delete').attr('action', '{{ url('admin') }}/news/delete/'+id);
+        });
+    </script>
 @endsection
