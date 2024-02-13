@@ -20,7 +20,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Berita';
         $data['page_sub_title'] = 'Berita Terbaru';
-        $data['news'] = News::latest()->paginate(8)->withQueryString();
+        $data['news'] = News::latest()->paginate(10)->withQueryString();
 
         return view('news', $data);
     }

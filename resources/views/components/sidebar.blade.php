@@ -18,16 +18,15 @@
                     <span class="link-title">Dashboard</span>
                 </a>
             </li>
-
             <li class="nav-item nav-category">Manajemen Konten</li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
+            <li class="nav-item {{ Route::is('slider.') ? 'active' : '' }}">
+                <a href="{{ route('slider.list') }}" class="nav-link">
                   <i class="link-icon" data-feather="sliders"></i>
                   <span class="link-title">Slider</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="" class="nav-link">
+            <li class="nav-item {{ Route::is('news.*') ? 'not-active' : '' }}">
+                <a href="{{ route('news.list') }}" class="nav-link">
                   <i class="link-icon" data-feather="file-text"></i>
                   <span class="link-title">Berita</span>
                 </a>

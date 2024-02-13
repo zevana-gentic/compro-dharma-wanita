@@ -53,9 +53,9 @@
                             @forelse ($sliders as $item)
                                 <tr>
                                     <td class="text-wrap text-capitalize">{{ $loop->iteration }}</td>
-                                    <td>
-                                        <div class="card">
-                                            <div class="card-body" style="width: 250px; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image) }}'); background-size: cover; "></div>
+                                    <td class="d-flex justify-content-center">
+                                        <div class="card" style="width: 250px; border: none;">
+                                            <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image) }}'); background-size: cover; background-position: center;"></div>
                                         </div>
                                     </td>
                                     <td class="text-wrap text-capitalize">{{ $item->title }}</td>

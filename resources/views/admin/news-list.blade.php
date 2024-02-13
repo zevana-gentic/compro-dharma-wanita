@@ -68,9 +68,9 @@
                         <tbody>
                             @forelse ($news as $item)
                                 <tr>
-                                    <td>
-                                        <div class="card">
-                                            <div class="card-body" style="width: 250px; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image_thumbnail) }}'); background-size: cover; ">
+                                    <td class="d-flex justify-content-center">
+                                        <div class="card" style="width: 250px; border: none;">
+                                            <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image_thumbnail) }}'); background-size: cover; ">
                                             </div>
                                         </div>
                                     </td>
