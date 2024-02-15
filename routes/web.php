@@ -62,38 +62,38 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix('admin/')->group(function () {
         Route::get('dashboard', [DashboardAdmin::class, 'dashboard'])->name('admin.dashboard');
 
-        Route::prefix('news/')->name('news.')->group(function () {
-            Route::get('list', [NewsAdmin::class, 'news_list'])->name('list');
-            Route::get('add', [NewsAdmin::class, 'news_add'])->name('add');
-            Route::post('submit', [NewsAdmin::class, 'news_submit'])->name('submit');
-            Route::get('edit/{id}', [NewsAdmin::class, 'news_edit'])->name('edit');
-            Route::post('update/{id}', [NewsAdmin::class, 'news_update'])->name('update');
-            Route::post('delete/{id}', [NewsAdmin::class, 'news_delete'])->name('delete');
+        Route::name('news.')->group(function () {
+            Route::get('news-list', [NewsAdmin::class, 'news_list'])->name('list');
+            Route::get('news-add', [NewsAdmin::class, 'news_add'])->name('add');
+            Route::post('news-submit', [NewsAdmin::class, 'news_submit'])->name('submit');
+            Route::get('news-edit/{id}', [NewsAdmin::class, 'news_edit'])->name('edit');
+            Route::post('news-update/{id}', [NewsAdmin::class, 'news_update'])->name('update');
+            Route::post('news-delete/{id}', [NewsAdmin::class, 'news_delete'])->name('delete');
         });
 
-        Route::prefix('gallery/')->name('gallery.')->group(function () {
-            Route::get('photo/list', [GalleryAdmin::class, 'photo_list'])->name('photo.list');
-            Route::get('photo/add', [GalleryAdmin::class, 'photo_add'])->name('photo.add');
-            Route::post('photo/submit', [GalleryAdmin::class, 'photo_submit'])->name('photo.submit');
-            Route::get('photo/edit/{id}', [GalleryAdmin::class, 'photo_edit'])->name('photo.edit');
-            Route::post('photo/update/{id}', [GalleryAdmin::class, 'photo_update'])->name('photo.update');
-            Route::post('photo/delete/{id}', [GalleryAdmin::class, 'photo_delete'])->name('photo.delete');
+        Route::name('gallery.')->group(function () {
+            Route::get('photo-list', [GalleryAdmin::class, 'photo_list'])->name('photo.list');
+            Route::get('photo-add', [GalleryAdmin::class, 'photo_add'])->name('photo.add');
+            Route::post('photo-submit', [GalleryAdmin::class, 'photo_submit'])->name('photo.submit');
+            Route::get('photo-edit/{id}', [GalleryAdmin::class, 'photo_edit'])->name('photo.edit');
+            Route::post('photo-update/{id}', [GalleryAdmin::class, 'photo_update'])->name('photo.update');
+            Route::post('photo-delete/{id}', [GalleryAdmin::class, 'photo_delete'])->name('photo.delete');
 
-            Route::get('video/list', [GalleryAdmin::class, 'video_list'])->name('video.list');
-            Route::get('video/add', [GalleryAdmin::class, 'video_add'])->name('video.add');
-            Route::post('video/submit', [GalleryAdmin::class, 'video_submit'])->name('video.submit');
-            Route::get('video/edit/{id}', [GalleryAdmin::class, 'video_edit'])->name('video.edit');
-            Route::post('video/update/{id}', [GalleryAdmin::class, 'video_update'])->name('video.update');
-            Route::post('video/delete/{id}', [GalleryAdmin::class, 'video_delete'])->name('video.delete');
+            Route::get('video-list', [GalleryAdmin::class, 'video_list'])->name('video.list');
+            Route::get('video-add', [GalleryAdmin::class, 'video_add'])->name('video.add');
+            Route::post('video-submit', [GalleryAdmin::class, 'video_submit'])->name('video.submit');
+            Route::get('video-edit/{id}', [GalleryAdmin::class, 'video_edit'])->name('video.edit');
+            Route::post('video-update/{id}', [GalleryAdmin::class, 'video_update'])->name('video.update');
+            Route::post('video-delete/{id}', [GalleryAdmin::class, 'video_delete'])->name('video.delete');
         });
 
-        Route::prefix('slider/')->name('slider.')->group(function () {
-            Route::get('list', [SliderAdmin::class, 'slider_list'])->name('list');
-            Route::get('add', [SliderAdmin::class, 'slider_add'])->name('add');
-            Route::post('submit', [SliderAdmin::class, 'slider_submit'])->name('submit');
-            Route::get('edit/{id}', [SliderAdmin::class, 'slider_edit'])->name('edit');
-            Route::post('update/{id}', [SliderAdmin::class, 'slider_update'])->name('update');
-            Route::post('delete/{id}', [SliderAdmin::class, 'slider_delete'])->name('delete');
+        Route::name('slider.')->group(function () {
+            Route::get('slider-list', [SliderAdmin::class, 'slider_list'])->name('list');
+            Route::get('slider-add', [SliderAdmin::class, 'slider_add'])->name('add');
+            Route::post('slider-submit', [SliderAdmin::class, 'slider_submit'])->name('submit');
+            Route::get('slider-edit/{id}', [SliderAdmin::class, 'slider_edit'])->name('edit');
+            Route::post('slider-update/{id}', [SliderAdmin::class, 'slider_update'])->name('update');
+            Route::post('slider-delete/{id}', [SliderAdmin::class, 'slider_delete'])->name('delete');
         });
 
         Route::prefix('dwp-member/')->name('dwp-member.')->group(function () {

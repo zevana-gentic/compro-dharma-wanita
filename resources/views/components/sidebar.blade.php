@@ -19,19 +19,19 @@
                 </a>
             </li>
             <li class="nav-item nav-category">Manajemen Konten</li>
-            <li class="nav-item {{ Route::is('slider.') ? 'active' : '' }}">
+            <li class="nav-item {{ Route::is('slider.*') ? 'active' : '' }}">
                 <a href="{{ route('slider.list') }}" class="nav-link">
                   <i class="link-icon" data-feather="sliders"></i>
                   <span class="link-title">Slider</span>
                 </a>
             </li>
-            <li class="nav-item {{ Route::is('news.*') ? 'not-active' : '' }}">
+            <li class="nav-item {{ Route::is('news.*') ? 'active' : '' }}">
                 <a href="{{ route('news.list') }}" class="nav-link">
                   <i class="link-icon" data-feather="file-text"></i>
                   <span class="link-title">Berita</span>
                 </a>
             </li>
-            <li class="nav-item {{ Route::is('gallery.*') ? 'not-active' : '' }}">
+            <li class="nav-item {{ Route::is('gallery.*') ? 'active' : '' }}">
                 <a class="nav-link" data-toggle="collapse" href="#galeri" role="button" aria-expanded="false" aria-controls="galeri">
                   <i class="link-icon" data-feather="image"></i>
                   <span class="link-title">Galeri</span>
@@ -40,10 +40,10 @@
                 <div class="collapse" id="galeri">
                   <ul class="nav sub-menu">
                     <li class="nav-item">
-                      <a href="" class="nav-link">Foto</a>
+                      <a href="{{ route('gallery.photo.list') }}" class="nav-link {{ Route::is('gallery.photo.*') ? 'active' : '' }}">Foto</a>
                     </li>
                     <li class="nav-item">
-                      <a href="" class="nav-link">Video</a>
+                      <a href="{{ route('gallery.video.list') }}" class="nav-link {{ Route::is('gallery.video.*') ? 'active' : '' }}">Video</a>
                     </li>
                   </ul>
                 </div>

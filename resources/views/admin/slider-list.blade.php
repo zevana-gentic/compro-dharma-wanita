@@ -111,7 +111,7 @@
     <script>
         $('.btn-hapus').on('click', function() {
             const id = $(this).data('id');
-            $('.form-delete').attr('action', '{{ url('admin') }}/slider/delete/'+id);
+            $('.form-delete').attr('action', '{{ url('admin') }}/slider-delete/'+id);
         });
     </script>
 @endsection

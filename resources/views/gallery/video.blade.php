@@ -10,7 +10,10 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen class="mx-1 my-1"></iframe> --}}
                 @foreach ($gallery_videos as $item)
-                    {!! $item->video !!}
+                <iframe width="400" height="250" src="{!! $item->video !!}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen class="mx-1 my-1"></iframe>
                 @endforeach
             </div>
             @if ($gallery_videos->count() > 0)

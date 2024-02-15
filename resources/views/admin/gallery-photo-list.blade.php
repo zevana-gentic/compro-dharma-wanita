@@ -60,9 +60,9 @@
                             @forelse ($photos as $item)
                                 <tr>
                                     <td class="text-wrap text-capitalize">{{ $loop->iteration }}</td>
-                                    <td>
-                                        <div class="card">
-                                            <div class="card-body" style="width: 120px; height: 200px; background-image: url('{{ asset('uploads/'. $item->photo) }}'); background-size: cover; "></div>
+                                    <td class="d-flex justify-content-center">
+                                        <div class="card" style="width: 250px; border: none;">
+                                            <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'. $item->photo) }}'); background-size: cover; background-position: center; "></div>
                                         </div>
                                     </td>
                                     <td>{{ date_format($item->created_at, "d M Y") }}</td>
@@ -117,7 +117,7 @@
     <script>
         $('.btn-hapus').on('click', function() {
             const id = $(this).data('id');
-            $('.form-delete').attr('action', '{{ url('admin') }}/gallery/photo/delete/'+id);
+            $('.form-delete').attr('action', '{{ url('admin') }}/photo-delete/'+id);
         });
     </script>
 @endsection

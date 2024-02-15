@@ -12,6 +12,7 @@ class PagesController extends Controller
     public function index()
     {
         $data['sliders'] = Slider::get();
+        $data['news'] = News::get();
 
         return view('landing', $data);
     }

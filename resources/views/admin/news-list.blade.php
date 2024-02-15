@@ -129,7 +129,7 @@
     <script>
         $('.btn-hapus').on('click', function() {
             const id = $(this).data('id');
-            $('.form-delete').attr('action', '{{ url('admin') }}/news/delete/'+id);
+            $('.form-delete').attr('action', '{{ url('admin') }}/news-delete/'+id);
         });
     </script>
 @endsection

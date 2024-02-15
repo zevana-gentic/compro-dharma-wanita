@@ -5,86 +5,77 @@
 @endsection
 
 @section('content')
-
     <!-- Carousel -->
     <section class="carousel">
         <div class="row">
-          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            @forelse ($sliders as $item)
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="bg-carousel"></div>
-                        <div class="carousel-body">
-                            <div class="title">{{ $item->title }}</div>
-                            <p>
-                                {{ $item->short_desc }}
-                            </p>
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                @forelse ($sliders as $item)
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="bg-carousel"></div>
+                            <div class="carousel-body">
+                                <div class="title">{{ $item->title }}</div>
+                                <p>
+                                    {{ $item->short_desc }}
+                                </p>
+                            </div>
+                            <img src="{{ asset('uploads/' . $item->image) }}" class="d-block w-100" alt="" />
                         </div>
-                        <img src="{{ asset('uploads/'.$item->image) }}" class="d-block w-100" alt="" />
                     </div>
-                </div>
-            @empty
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="bg-carousel"></div>
-                        <div class="carousel-body">
-                            <div class="title">Lorem</div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Fugiat, labore!
-                            </p>
+                @empty
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="bg-carousel"></div>
+                            <div class="carousel-body">
+                                <div class="title">Lorem</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Fugiat, labore!
+                                </p>
+                            </div>
+                            <img src="assets/slider1.png" class="d-block w-100" alt="" />
                         </div>
-                        <img src="assets/slider1.png" class="d-block w-100" alt="" />
                     </div>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="bg-carousel"></div>
-                        <div class="carousel-body">
-                            <div class="title">Lorem</div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Fugiat, labore!
-                            </p>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="bg-carousel"></div>
+                            <div class="carousel-body">
+                                <div class="title">Lorem</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Fugiat, labore!
+                                </p>
+                            </div>
+                            <img src="assets/slider1.png" class="d-block w-100" alt="" />
                         </div>
-                        <img src="assets/slider1.png" class="d-block w-100" alt="" />
                     </div>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="bg-carousel"></div>
-                        <div class="carousel-body">
-                            <div class="title">Lorem</div>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Fugiat, labore!
-                            </p>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="bg-carousel"></div>
+                            <div class="carousel-body">
+                                <div class="title">Lorem</div>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Fugiat, labore!
+                                </p>
+                            </div>
+                            <img src="assets/slider1.png" class="d-block w-100" alt="" />
                         </div>
-                        <img src="assets/slider1.png" class="d-block w-100" alt="" />
                     </div>
-                </div>
-            @endforelse
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExampleInterval"
-              data-bs-slide="prev"
-            >
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExampleInterval"
-              data-bs-slide="next"
-            >
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+                @endforelse
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
-      </section>
+    </section>
 
     <!-- About -->
     <section class="about">
@@ -118,20 +109,23 @@
                 <a href="{{ route('pages.news') }}" class="btn-see-all my-3">Lihat Semua</a>
             </div>
             <div class="berita-content">
+                @forelse ($news as $item)
                 <div class="row">
-                    <div class="col-md-3">
-                        @include('components.card')
-                    </div>
-                    <div class="col-md-3">
-                        @include('components.card')
-                    </div>
-                    <div class="col-md-3">
-                        @include('components.card')
-                    </div>
-                    <div class="col-md-3">
-                        @include('components.card')
-                    </div>
+                        <div class="col-md-3">
+                            @include('components.card')
+                        </div>
+                        <div class="col-md-3">
+                            @include('components.card')
+                        </div>
+                        <div class="col-md-3">
+                            @include('components.card')
+                        </div>
+                        <div class="col-md-3">
+                            @include('components.card')
+                        </div>
+                    @empty
                 </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -211,26 +205,26 @@
                                     <g>
                                         <g>
                                             <path d="M271.294,242.104v-54.343c25.526,4.476,25.531,20.337,25.531,26.111h30.589c0-31.9-20.682-52.481-56.12-56.962v-21.724
-                  h-30.589v21.724c-35.437,4.481-56.12,25.061-56.12,56.962s20.682,52.48,56.12,56.961v54.344
-                  c-25.526-4.476-25.531-20.337-25.531-26.111h-30.589c0,31.9,20.682,52.481,56.12,56.962v21.724h30.589v-21.724
-                  c35.437-4.481,56.12-25.061,56.12-56.962C327.414,267.165,306.731,246.586,271.294,242.104z M240.705,239.982
-                  c-25.526-4.475-25.531-20.335-25.531-26.11c0-5.774,0.005-21.635,25.531-26.111V239.982z M271.294,325.177v-52.222
-                  c25.526,4.476,25.531,20.337,25.531,26.111S296.82,320.701,271.294,325.177z" />
+                      h-30.589v21.724c-35.437,4.481-56.12,25.061-56.12,56.962s20.682,52.48,56.12,56.961v54.344
+                      c-25.526-4.476-25.531-20.337-25.531-26.111h-30.589c0,31.9,20.682,52.481,56.12,56.962v21.724h30.589v-21.724
+                      c35.437-4.481,56.12-25.061,56.12-56.962C327.414,267.165,306.731,246.586,271.294,242.104z M240.705,239.982
+                      c-25.526-4.475-25.531-20.335-25.531-26.11c0-5.774,0.005-21.635,25.531-26.111V239.982z M271.294,325.177v-52.222
+                      c25.526,4.476,25.531,20.337,25.531,26.111S296.82,320.701,271.294,325.177z" />
                                         </g>
                                     </g>
                                     <g>
                                         <g>
                                             <path
                                                 d="M361.391,41.149H150.609c-60.355,0-109.46,49.104-109.46,109.461v51.652L21.628,182.74L0,204.371l56.444,56.444
-                  l56.444-56.444l-21.63-21.63l-19.52,19.52V150.61c0-43.489,35.381-78.872,78.871-78.872h210.782
-                  c43.488,0,78.871,35.381,78.871,78.872v78.379h30.589V150.61C470.851,90.253,421.747,41.149,361.391,41.149z" />
+                      l56.444-56.444l-21.63-21.63l-19.52,19.52V150.61c0-43.489,35.381-78.872,78.871-78.872h210.782
+                      c43.488,0,78.871,35.381,78.871,78.872v78.379h30.589V150.61C470.851,90.253,421.747,41.149,361.391,41.149z" />
                                         </g>
                                     </g>
                                     <g>
                                         <g>
                                             <path d="M455.556,259.595l-56.443,56.443l21.63,21.629l19.52-19.52v43.244c0,43.488-35.381,78.871-78.871,78.871H150.609
-                  c-43.488,0-78.871-35.381-78.871-78.871V291.42H41.149v69.971c0,60.356,49.104,109.46,109.46,109.46h210.782
-                  c60.355,0,109.46-49.103,109.46-109.46v-43.245l19.521,19.52L512,316.038L455.556,259.595z" />
+                      c-43.488,0-78.871-35.381-78.871-78.871V291.42H41.149v69.971c0,60.356,49.104,109.46,109.46,109.46h210.782
+                      c60.355,0,109.46-49.103,109.46-109.46v-43.245l19.521,19.52L512,316.038L455.556,259.595z" />
                                         </g>
                                     </g>
                                 </svg>

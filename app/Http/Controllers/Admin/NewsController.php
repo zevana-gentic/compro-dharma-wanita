@@ -41,7 +41,7 @@ class NewsController extends Controller
             'title.required'           => 'Judul berita harus diisi.',
             'category.required'        => 'Kategori harus diisi.',
             'author.required'          => 'Penulis harus diisi.',
-            'content.required'         => 'Kontent harus diisi.'
+            'content.required'         => 'Konten harus diisi.'
         ]);
 
         if ($validator->fails()) {
@@ -89,7 +89,7 @@ class NewsController extends Controller
             'title.required'           => 'Judul berita harus diisi.',
             'category.required'        => 'Kategori harus diisi.',
             'author.required'          => 'Penulis harus diisi.',
-            'content.required'         => 'Kontent harus diisi.'
+            'content.required'         => 'Konten harus diisi.'
         ]);
 
         if ($validator->fails()) {
