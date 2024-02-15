@@ -11,4 +11,9 @@ class DashboardController extends Controller
     {
         return view('member.dashboard');
     }
+
+    public function profil_edit()
+    {
+        return view('member.profil');
+    }
 }

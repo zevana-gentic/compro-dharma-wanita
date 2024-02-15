@@ -95,7 +95,7 @@
                                 </a>
                             </li> --}}
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="{{ route('member.profil-edit') }}" class="nav-link">
                                     <i data-feather="edit"></i>
                                     <span>Edit Profil</span>
                                 </a>

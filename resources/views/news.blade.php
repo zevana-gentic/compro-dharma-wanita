@@ -14,7 +14,7 @@
                                     <div class="title-body">{{ $item->title }}</div>
                                     <div class="card-text my-2">
                                         <p>
-                                           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam nam commodi rerum consequatur praesentium perspiciatis debitis doloremque hic, aut optio veritatis laudantium molestiae. Commodi vel qui porro repudiandae, quia eligendi perferendis suscipit? Mollitia rerum dolore reprehenderit, asperiores repellendus a, nihil nisi illum voluptas ipsa impedit sequi reiciendis error illo ut. Sed a reiciendis, doloribus quaerat possimus corporis. Iure odit laudantium quos corporis quod ipsum enim asperiores quis, minus aspernatur obcaecati a dicta eaque nesciunt voluptatem omnis cum magnam possimus accusamus nam quisquam est! Consequatur deleniti minima cumque modi delectus repellendus explicabo! Ad similique quae consectetur laboriosam impedit eveniet architecto officiis sit, pariatur fuga at non tempore accusamus rem voluptatum dolores tempora sint magnam sed minus. Cum tempore ex necessitatibus suscipit iusto enim, blanditiis sint veritatis ut natus. Officia assumenda natus unde nihil sapiente nostrum doloremque, modi totam molestiae aperiam delectus, error obcaecati pariatur, officiis architecto facilis alias dolores vero autem?
+                                             {!! $item->content !!}
                                         </p>
                                     </div>
                                     <div class="d-flex mt-3 mb-2">

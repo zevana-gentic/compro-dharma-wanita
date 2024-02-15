@@ -109,23 +109,14 @@
                 <a href="{{ route('pages.news') }}" class="btn-see-all my-3">Lihat Semua</a>
             </div>
             <div class="berita-content">
-                @forelse ($news as $item)
                 <div class="row">
-                        <div class="col-md-3">
-                            @include('components.card')
-                        </div>
-                        <div class="col-md-3">
-                            @include('components.card')
-                        </div>
-                        <div class="col-md-3">
-                            @include('components.card')
-                        </div>
+                    @forelse ($news as $item)
                         <div class="col-md-3">
                             @include('components.card')
                         </div>
                     @empty
+                    @endforelse
                 </div>
-                @endforelse
             </div>
         </div>
     </section>

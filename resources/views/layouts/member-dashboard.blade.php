@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') - Dharma Wanita Persatuan</title>
+    <link rel="stylesheet" href="{{ asset('noble') }}/assets/vendors/jquery-tags-input/jquery.tagsinput.min.css">
     <link rel="stylesheet" href="{{ asset('noble') }}/assets/css/demo_1/style.css">
     <link rel="stylesheet" href="{{ asset('noble') }}/assets/vendors/core/core.css">
+    <link rel="stylesheet" href="{{ asset('noble') }}/assets/vendors/dropify/dist/dropify.min.css">
+    @yield('css')
     {{-- <link rel="shortcut icon" href="{{ asset('noble') }}/assets/images/favicon.png" /> --}}
 </head>
 
@@ -40,6 +43,10 @@
     <script src="{{ asset('noble') }}/assets/js/template.js"></script>
     <script src="{{ asset('noble') }}/assets/js/dashboard.js"></script>
     <script src="{{ asset('noble') }}/assets/js/datepicker.js"></script>
+    <script src="{{ asset('noble') }}/assets/vendors/jquery-tags-input/jquery.tagsinput.min.js"></script>
+    <script src="{{ asset('noble') }}/assets/vendors/dropify/dist/dropify.min.js"></script>
+    <script src="{{ asset('noble') }}/assets/vendors/tinymce/tinymce.js"></script>
+    @yield('js')
 </body>
 
 </html>

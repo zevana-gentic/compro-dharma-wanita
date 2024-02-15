@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 col-md-12 col-xl-5">
-                                        <h3 class="mb-2">3,897</h3>
+                                        <h3 class="mb-2">{{ $total_news }}</h3>
                                         {{-- <div class="d-flex align-items-baseline">
                                             <p class="text-success">
                                                 <span>+3.3%</span>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 col-md-12 col-xl-5">
-                                        <h3 class="mb-2">35,084</h3>
+                                        <h3 class="mb-2">{{ $total_dwp_member }}</h3>
                                         {{-- <div class="d-flex align-items-baseline">
                                             <p class="text-danger">
                                                 <span>-2.8%</span>
@@ -122,7 +122,7 @@
                                         <th>Nama Anggota</th>
                                         <th>Email</th>
                                         <th>Tanggal Registrasi</th>
-                                        <th>Status</th>
+                                        {{-- <th>Status</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,7 +132,7 @@
                                             <td>{{ $item->name }}</td>
                                             <td class="text-warning"><b>{{ $item->email }}</b></td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y (h:i:s A)') }}</td>
-                                            <td><span class="badge {{ $item->verified_at ? 'badge-success' : 'badge-danger' }}">{{ $item->verified_at ? 'Sudah Verifikasi' : 'Belum Verifikasi Email'}}</span></td>
+                                            {{-- <td><span class="badge {{ $item->verified_at ? 'badge-success' : 'badge-danger' }}">{{ $item->verified_at ? 'Sudah Verifikasi' : 'Belum Verifikasi Email'}}</span></td> --}}
                                         </tr>
                                     @empty
                                         <tr>

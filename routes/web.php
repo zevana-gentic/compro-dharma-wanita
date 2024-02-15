@@ -96,15 +96,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
             Route::post('slider-delete/{id}', [SliderAdmin::class, 'slider_delete'])->name('delete');
         });
 
-        Route::prefix('dwp-member/')->name('dwp-member.')->group(function () {
-            Route::get('list', [DWPMemberController::class, 'dwp_member_list'])->name('list');
+        Route::name('dwp-member.')->group(function () {
+            Route::get('dwp-member-list', [DWPMemberController::class, 'dwp_member_list'])->name('list');
         });
     });
 });
 
 Route::middleware(['auth', 'member'])->group(function () {
-    Route::prefix('member/')->group(function () {
-        Route::get('dashboard', [DashboardMember::class, 'dashboard'])->name('member.dashboard');
+    Route::prefix('member/')->name('member.')->group(function () {
+        Route::get('dashboard', [DashboardMember::class, 'dashboard'])->name('dashboard');
+        Route::get('edit-profil', [DashboardMember::class, 'profil_edit'])->name('profil-edit');
     });
 });
 

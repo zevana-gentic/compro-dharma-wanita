@@ -13,9 +13,20 @@ use App\Http\Controllers\Controller;
 
 class NewsController extends Controller
 {
-    public function news_list()
+    public function news_list(Request $request)
     {
-        $data['news'] = News::paginate(10)->withQueryString();
+        $news = News::latest();
+
+        if ($request->category) {
+            $news = $news->where('category', $request->category);
+        }
+
+        if ($request->q) {
+            $news = $news->where('title',  'LIKE', '%' . $request->q . '%')
+                        ->orWhere('author',  'LIKE', '%' . $request->q . '%');
+        }
+
+        $data['news'] = $news->paginate(10)->withQueryString();
 
         return view('admin.news-list', $data);
     }

@@ -21,10 +21,10 @@
                             <div class="input-group ml-1 mb-3 row justify-content right">
                                 <select name="category" id="category">
                                     <option value="">Pilih Kategori</option>
+                                    <option value="Berita Internal">Berita Internal</option>
+                                    <option value="Berita Eksternal">Berita Eksternal</option>
                                 </select>
-                                <input type="text" class="form-control" placeholder="Cari Berita" name="q">
-                                {{-- <input type="text" class="form-control" placeholder="Publisher" id="publisher" name="publisher" value="{{ isset($_GET['publisher']) ? $_GET['publisher'] : '' }}"> --}}
-                                {{-- <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="{{ isset($_GET['title']) ? $_GET['title'] : '' }}"> --}}
+                                <input type="text" class="form-control" placeholder="Cari berita dengan Judul atau Penulis..." name="q">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-primary" type="submit" value="search" title="Search">Cari</button>
                                 </div>

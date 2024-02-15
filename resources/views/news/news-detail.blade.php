@@ -9,6 +9,7 @@
                         <img src="{{ asset('uploads/'. $news->image_thumbnail) }}" alt="" class="mb-3">
                         <span class="date-author"><i class="fa-regular fa-calendar me-1"></i>{{ $news->created_at->format("j M Y"); }}</span>
                         <span class="date-author"><i class="fa-solid fa-user me-1"></i>{{ $news->author }}</span>
+                        <span class="date-author"><i class="fa-solid fa-layer-group me-1"></i></i>{{ $news->category }}</span>
                         <p>{!! $news->content !!}</p>
                     </div>
                     <div class="col-md-4">

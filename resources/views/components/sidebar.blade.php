@@ -51,7 +51,7 @@
 
             <li class="nav-item nav-category">Anggota DWP</li>
             <li class="nav-item {{ Route::is('dwp-member.*') ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route('dwp-member.list') }}" class="nav-link">
                     <i class="link-icon" data-feather="users"></i>
                     <span class="link-title">List Anggota DWP</span>
                 </a>

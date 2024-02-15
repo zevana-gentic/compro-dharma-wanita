@@ -12,7 +12,7 @@ class PagesController extends Controller
     public function index()
     {
         $data['sliders'] = Slider::get();
-        $data['news'] = News::get();
+        $data['news'] = News::latest()->limit(4)->get();
 
         return view('landing', $data);
     }
