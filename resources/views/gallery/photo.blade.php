@@ -8,8 +8,8 @@
                 <div class="d-flex justify-content-center">
                     <div id="gallery" class="text-center">
                         @foreach ($gallery_photos as $item)
-                            <a href="{{ asset('uploads/'. $item->photo) }}">
-                                <img src="{{ asset('uploads/'. $item->photo) }}" height="250" alt="" class="mt-1">
+                            <a href="{{ asset('uploads/' . $item->photo) }}">
+                                <img src="{{ asset('uploads/' . $item->photo) }}" height="250" alt="" class="mt-1">
                             </a>
                         @endforeach
                     </div>
