@@ -27,7 +27,7 @@
                 <h6>Bulan ini:</h6>
                 <h6>Tahun ini:</h6>
             </div>
-            <div class="copyright text-center my-5">2024 Copyright - Lorem ipsum</div>
+            <div class="copyright text-center my-5">2024 Copyright</div>
         </div>
     </div>
 </footer>
