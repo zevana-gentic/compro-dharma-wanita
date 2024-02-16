@@ -111,21 +111,11 @@
             <div class="kegiatan-content my-4">
                 <div class="row">
                     <div class="owl-carousel owl-theme">
-                        <div class="kegiatan-card">
-                            <img src="assets/notfound.png" alt="" height="200px">
-                        </div>
-                        <div class="kegiatan-card">
-                            <img src="assets/notfound.png" alt="" height="200px">
-                        </div>
-                        <div class="kegiatan-card">
-                            <img src="assets/notfound.png" alt="" height="200px">
-                        </div>
-                        <div class="kegiatan-card">
-                            <img src="assets/notfound.png" alt="" height="200px">
-                        </div>
-                        <div class="kegiatan-card">
-                            <img src="assets/notfound.png" alt="" height="200px">
-                        </div>
+                        @foreach ($photos as $item)
+                            <div class="kegiatan-card">
+                                <img src="{{ asset('uploads/' . $item->photo) }}" alt="" height="200px">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

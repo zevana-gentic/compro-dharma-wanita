@@ -13,6 +13,7 @@ class PagesController extends Controller
     {
         $data['sliders'] = Slider::get();
         $data['news'] = News::latest()->limit(4)->get();
+        $data['photos'] = Gallery::where('category', 'Foto')->latest()->limit(10)->get();
 
         return view('landing', $data);
     }

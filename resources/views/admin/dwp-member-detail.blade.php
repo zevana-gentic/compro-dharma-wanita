@@ -28,7 +28,7 @@
                     <div class="member-name" style="font-weight: 800;">EMAIL :</div>
                     <div class="mamber-name">{{ $member->email }}</div>
                     <hr />
-                    <div class="member-name" style="font-weight: 800;">BERGABUNG :</div>
+                    <div class="member-name" style="font-weight: 800;">TANGGAL DAFTAR :</div>
                     <div class="mamber-name">{{ $member->created_at->format('j M Y') }}</div>
                 </div>
             </div>
