@@ -5,7 +5,7 @@
         <div class="container">
             @include('components.section-header')
             <div class="body berita-content">
-                <div class="row">
+                <div class="row w-100">
                     @foreach ($news as $item)
                         <div class="col-md-3">
                             <div class="card my-3">

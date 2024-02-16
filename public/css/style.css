@@ -174,7 +174,7 @@ header {
     position: sticky !important;
     top: 0;
     left: 0;
-    z-index: 9;
+    z-index: 9999;
     width: 100%;
     font-family: var(--font-primary);
     font-size: 1rem;
@@ -389,6 +389,7 @@ header {
 
 .berita-content {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -408,8 +409,8 @@ header {
 }
 
 .img-berita {
-    width: 100%;
-    height: 100%;
+    /* width: 300px; */
+    height: 250px;
     object-fit: cover;
     object-position: center;
     border-radius: 5px 5px 0 0;
@@ -516,11 +517,18 @@ header {
     border-radius: 5px;
 }
 
+.detail-berita .title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-5);
+}
+
 .detail-berita a.card-berita-terbaru {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.65);
     font-weight: 800;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-family: var(--font-secondary);
 }
 
@@ -631,6 +639,10 @@ header {
 #gallery picture {
     position: relative;
     z-index: 999;
+}
+
+#gallery img {
+    width: 100%;
 }
 
 /* Footer */

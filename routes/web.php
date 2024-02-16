@@ -98,6 +98,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
         Route::name('dwp-member.')->group(function () {
             Route::get('dwp-member-list', [DWPMemberController::class, 'dwp_member_list'])->name('list');
+            Route::get('dwp-member-detail/{id}', [DWPMemberController::class, 'dwp_member_detail'])->name('detail');
         });
     });
 });

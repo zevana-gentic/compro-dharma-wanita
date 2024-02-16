@@ -70,7 +70,7 @@
                                 <tr>
                                     <td class="d-flex justify-content-center">
                                         <div class="card" style="width: 250px; border: none;">
-                                            <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image_thumbnail) }}'); background-size: cover; ">
+                                            <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'.@$item->image_thumbnail) }}'); background-size: cover; background-position: center; ">
                                             </div>
                                         </div>
                                     </td>

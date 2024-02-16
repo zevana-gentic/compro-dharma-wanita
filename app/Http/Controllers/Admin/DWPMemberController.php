@@ -14,4 +14,10 @@ class DWPMemberController extends Controller
 
         return view('admin.dwp-member-list', $data);
     }
+
+    public function dwp_member_detail($id)
+    {
+        $data['member'] = User::where('role', '!=','1')->find($id);
+        return view('admin.dwp-member-detail', $data);
+    }
 }

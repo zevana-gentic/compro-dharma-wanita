@@ -68,7 +68,7 @@
                                             <td class="text-warning"><b>{{ $item->email }}</b></td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('l, d F Y (h:i:s A)') }}</td>
                                             <td>
-                                                <a class="btn btn-warning btn-icon mr-2" href=""><i data-feather="eye"></i></a>
+                                                <a class="btn btn-warning btn-icon mr-2" href="{{ route('dwp-member.detail', $item->id) }}"><i data-feather="eye"></i></a>
                                                 {{-- <a class="btn btn-success btn-icon btn-edit mr-2"
                                                     href=""><i data-feather="edit"></i></a>
                                                 <a class="btn btn-danger btn-hapus btn-icon" data-toggle="modal"
