@@ -94,7 +94,7 @@
                             <a class="nav-link" href="{{ route('register') }}">Daftar</a>
                         </li>
                     </ul>
-                @else
+                {{-- @else
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Hi, {{ Auth::user()->name }} !
@@ -102,7 +102,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}">Logout</a>
                         </li>
-                    </ul>
+                    </ul> --}}
                 @endguest
             </div>
         </div>

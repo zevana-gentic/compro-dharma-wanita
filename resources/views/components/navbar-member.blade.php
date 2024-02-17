@@ -72,14 +72,20 @@
             <li class="nav-item dropdown nav-profile">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="https://ui-avatars.com/api/?background=f9c346&size=30&name={{ str_replace(' ', '+', Auth::user()->name) }}"
-                        alt="profile">
+                    @if (@Auth::user()->member->photo)
+                        <img src="{{ asset('uploads/'. Auth::user()->member->photo) }}" alt="profile">
+                    @else
+                        <img src="https://ui-avatars.com/api/?background=f9c346&size=30&name={{ str_replace(' ', '+', Auth::user()->name) }}" alt="profile">
+                    @endif
                 </a>
                 <div class="dropdown-menu" aria-labelledby="profileDropdown">
                     <div class="dropdown-header d-flex flex-column align-items-center">
                         <div class="figure mb-3">
-                            <img src="https://ui-avatars.com/api/?background=f9c346&size=30&name={{ str_replace(' ', '+', Auth::user()->name) }}"
-                                alt="profile">
+                            @if (@Auth::user()->member->photo)
+                                <img src="{{ asset('uploads/'. Auth::user()->member->photo) }}" alt="profile">
+                            @else
+                                <img src="https://ui-avatars.com/api/?background=f9c346&size=30&name={{ str_replace(' ', '+', Auth::user()->name) }}" alt="profile">
+                            @endif
                         </div>
                         <div class="info text-center">
                             <p class="name font-weight-bold mb-0">{{ Auth::user()->name }}</p>

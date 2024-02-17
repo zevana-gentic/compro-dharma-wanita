@@ -8,9 +8,16 @@ use App\Http\Controllers\Controller;
 
 class DWPMemberController extends Controller
 {
-    public function dwp_member_list()
+    public function dwp_member_list(Request $request)
     {
-        $data['members'] = User::where('role', '!=','1')->get();
+        $member = User::where('role', '!=','1');
+
+        if ($request->q) {
+            $member = $member->where('name',  'LIKE', '%' . $request->q . '%')
+                            ->orWhere('email', 'LIKE', '%'. $request->q . '%');
+        }
+
+        $data['members'] = $member->paginate(10)->withQueryString();
 
         return view('admin.dwp-member-list', $data);
     }

@@ -22,7 +22,7 @@
             <div class="col-md-6">
                 <div class="detail-profile mt-4 card p-4">
                     <div class="section-name text-center mb-1" style="font-size: 2rem; font-weight: 800;">PROFIL</div>
-                    <div class="member-name" style="font-weight: 800;">NAMA MEMBER :</div>
+                    <div class="member-name" style="font-weight: 800;">NAMA ANGGOTA :</div>
                     <div class="mamber-name">{{ $member->name }}</div>
                     <hr />
                     <div class="member-name" style="font-weight: 800;">EMAIL :</div>

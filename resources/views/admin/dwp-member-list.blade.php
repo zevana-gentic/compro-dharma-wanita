@@ -17,14 +17,11 @@
                         </a>
                     </div> --}}
                         <div class="col-md-6">
-                            <form action="{{ url()->current() }}" method="GET">
+                            <form action="" method="GET">
                                 <div class="input-group ml-1 mb-3 row justify-content right">
-                                    {{-- <input type="text" class="form-control" placeholder="" id="code" name="code"> --}}
-                                    <input type="text" class="form-control" placeholder="Cari Anggota" id="name"
-                                        name="name">
+                                    <input type="text" class="form-control" placeholder="Cari Anggota" name="q">
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-primary" type="submit" value="search"
-                                            title="Search">Cari</button>
+                                        <button class="btn btn-outline-primary" type="submit" title="Search">Cari</button>
                                     </div>
                                 </div>
                             </form>

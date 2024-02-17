@@ -107,6 +107,7 @@ Route::middleware(['auth', 'member'])->group(function () {
     Route::prefix('member/')->name('member.')->group(function () {
         Route::get('dashboard', [DashboardMember::class, 'dashboard'])->name('dashboard');
         Route::get('edit-profil', [DashboardMember::class, 'profil_edit'])->name('profil-edit');
+        Route::post('edit-profil/submit', [DashboardMember::class, 'profil_edit_submit'])->name('profil-edit.submit');
     });
 });
 
