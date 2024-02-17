@@ -31,6 +31,7 @@
                 <div class="card-header d-flex flex-column align-items-center mb-3 fs-3 fw-bold">
                     <img src="{{ asset('assets/logo.png') }}" alt="logo" width="50" height="50">
                     <div class="dwp text-center">Dharma Wanita Persatuan</div>
+                    <div class="dwp text-center">Kota Magelang</div>
                 </div>
                 @yield('content')
             </div>

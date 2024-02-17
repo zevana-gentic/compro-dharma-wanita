@@ -3,10 +3,13 @@
         <div class="row">
             <div class="col-md-4">
                 <img src="{{ asset('assets/logo.png') }}" alt="" class="img-footer" />
-                <p class="title mt-2">Dharma Wanita Persatuan</p>
-                <p class="mt-2">Alamat</p>
-                <div class="sosmed">
-                    <a href="" class="sosmed"><i class="fa-brands fa-instagram"></i></a>
+                <div class="title mt-2">Dharma Wanita Persatuan</div>
+                <div class="title">Kota Magelang</div>
+                <p class="mt-2">Jl. Veteran No.4, Magelang, Kec. Magelang Tengah, Kota Magelang, Jawa Tengah 56117</p>
+                <div class="sosmed d-flex gap-2">
+                    <a href="#" class="sosmed instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="sosmed facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="sosmed youtube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
             <div class="col-md-4">

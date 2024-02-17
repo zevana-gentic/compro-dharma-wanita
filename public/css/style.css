@@ -17,6 +17,28 @@
     --color-5: #797979;
 }
 
+main {
+    position: relative;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+.whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    background: #25D366;
+    border-radius: 100%;
+    padding: .5em;
+    text-decoration: none;
+}
+
 header {
     font-family: var(--font-primary);
     font-size: 2rem;
@@ -674,14 +696,21 @@ footer .sosmed a {
     color: white;
     width: 40px;
     height: 40px;
-    background-color: var(--color-4);
     border-radius: 100%;
     padding: 7px;
     text-decoration: none;
 }
 
-footer .sosmed a:hover {
-    background-color: var(--color-3);
+footer .sosmed.instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+footer .sosmed.facebook {
+    background: #1877F2
+}
+
+footer .sosmed.youtube {
+    background: #E62117
 }
 
 footer .sosmed i {
@@ -715,6 +744,29 @@ footer .sosmed i {
 
 .kontak .input-group-text {
     color: var(--color-5);
+}
+
+.location img {
+    width: 100%;
+    height: 48%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.location.second img {
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.location .location-maps {
+    width: 100%;
+    height: 350px;
+}
+
+.location.second .location-maps {
+    width: 100%;
+    height: 350px;
 }
 
 @keyframes rotateAnimation {

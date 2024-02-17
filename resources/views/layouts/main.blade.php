@@ -34,6 +34,7 @@
 
     <main>
         @yield('content')
+        @include('components.whatsapp')
     </main>
 
     @include('components.footer')
