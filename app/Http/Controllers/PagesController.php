@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Slider;
 use App\Models\Gallery;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -14,6 +15,21 @@ class PagesController extends Controller
         $data['sliders'] = Slider::get();
         $data['news'] = News::latest()->limit(4)->get();
         $data['photos'] = Gallery::where('category', 'Foto')->latest()->limit(10)->get();
+
+        $visitor = Visitor::first();
+
+        if ($visitor) {
+            $visitor->day += 1;
+            $visitor->month += 1;
+            $visitor->year += 1;
+            $visitor->save();
+        } else {
+            Visitor::create([
+                'day' => 1,
+                'month' => 1,
+                'year' => 1,
+            ]);
+        }
 
         return view('landing', $data);
     }
@@ -41,6 +57,15 @@ class PagesController extends Controller
         $data['page_sub_title'] = 'Hubungi Kami';
 
         return view('contact-us', $data);
+    }
+
+    public function contact_us_submit(Request $request)
+    {
+        $sender_name = $request->input('name');
+        $content = $request->message;
+        $message = "Halo, saya $sender_name\n$content";
+
+        return redirect()->away('https://wa.me/6281328855218?text='.urlencode($message));
     }
 
     public function history()

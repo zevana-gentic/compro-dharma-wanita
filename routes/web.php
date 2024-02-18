@@ -42,6 +42,7 @@ Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/berita', 'news')->name('news');
     Route::get('/berita/{slug}', 'news_detail')->name('news-detail');
     Route::get('/contact-us', 'contact_us')->name('contact-us');
+    Route::post('/contact-us/submit', 'contact_us_submit')->name('contact-us.submit');
     Route::get('/sejarah', 'history')->name('history');
     Route::get('/visi-misi', 'vision_mission')->name('vision-mission');
     Route::get('/tugas-fungsi', 'task_functions')->name('task-functions');

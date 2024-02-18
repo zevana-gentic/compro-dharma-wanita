@@ -11,15 +11,16 @@
                 <div class="row mt-5">
                     <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
                         <div class="title mb-5">Dharma Wanita Persatuan Kota Magelang</div>
-                        <form>
+                        <form action="{{ route('pages.contact-us.submit') }}" method="POST">
+                            @csrf
                             <div class="input-group mb-4">
                                 <!-- <label for="name" class="form-label">Nama</label> -->
-                                <input type="text" class="form-control" id="name" placeholder="Nama" />
+                                <input type="text" class="form-control" name="name" placeholder="Nama" />
                                 <span class="input-group-text"><i><i class="fa-solid fa-user"></i></i></span>
                             </div>
                             <div class="input-group mb-4">
                                 <!-- <label for="pesan">Pesan</label> -->
-                                <textarea class="form-control" placeholder="Pesan" id="pesan"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Pesan" rows="5"></textarea>
                             </div>
                             <div class="button-kirim d-flex justify-content-center">
                                 <button type="submit" class="btn-kirim">Kirim</button>

@@ -26,11 +26,11 @@
             </div>
             <div class="col-md-4">
                 <header class="mb-2">Visitor</header>
-                <h6>Hari ini:</h6>
-                <h6>Bulan ini:</h6>
-                <h6>Tahun ini:</h6>
+                <h6>Hari ini: {{ \AppHelper::get_total_visitor()->day ?? 0 }}</h6>
+                <h6>Bulan ini: {{ \AppHelper::get_total_visitor()->month ?? 0}}</h6>
+                <h6>Tahun ini: {{ \AppHelper::get_total_visitor()->year ?? 0}}</h6>
             </div>
-            <div class="copyright text-center my-5">2024 Copyright</div>
+            <div class="copyright text-center my-5">Copyright © 2024 NasTech. All rights reserved.</div>
         </div>
     </div>
 </footer>
