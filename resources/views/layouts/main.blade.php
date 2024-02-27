@@ -29,8 +29,17 @@
 </head>
 
 <body>
-    @include('components.top-navbar')
-    @include('components.navbar')
+    @if (Route::is('sekda.*'))
+        @include('components.sekda-top-navbar')
+    @else
+        @include('components.top-navbar')
+    @endif
+
+    @if (Route::is('sekda.*'))
+        @include('components.navbar-sekda')
+    @else
+        @include('components.navbar')
+    @endif
 
     <main>
         @yield('content')

@@ -35,11 +35,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('pages.secretariat') }}">DWP Sekretariat Daerah</a>
+                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('sekda.pages.history') }}" target="_blank">DWP Sekretariat Daerah</a>
                             </li>
-                            <li><a class="dropdown-item {{ Route::is('pages.inspectorate') ? 'active' : '' }}" href="{{ route('pages.inspectorate') }}">DWP Inspektorat</a></li>
+                            <li><a class="dropdown-item {{ Route::is('pages.inspectorate') ? 'active' : '' }}" href="">DWP Inspektorat</a></li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('pages.education-office') ? 'active' : '' }}" href="{{ route('pages.education-office') }}">DWP Dinas Pendidikan</a>
+                                <a class="dropdown-item {{ Route::is('pages.education-office') ? 'active' : '' }}" href="">DWP Dinas Pendidikan</a>
                             </li>
                             {{-- <li><a class="dropdown-item" href="#">Dst</a></li> --}}
                         </ul>

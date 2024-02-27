@@ -16,6 +16,10 @@ use App\Http\Controllers\Admin\DWPMemberController;
 // Member
 use App\Http\Controllers\Member\DashboardController as DashboardMember;
 
+// DWP Sekda
+use App\Http\Controllers\Sekda\PagesController as PagesSekda;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +41,7 @@ Route::controller(AuthController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
 });
 
+// DWP Kota
 Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/berita', 'news')->name('news');
@@ -57,6 +62,25 @@ Route::controller(PagesController::class)->name('pages.')->group(function () {
     Route::get('/galeri-video', 'gallery_video')->name('gallery-video');
     Route::get('/informasi-eksternal', 'external_information')->name('external-information');
     Route::get('/informasi-internal', 'internal_information')->name('internal-information');
+});
+
+// Unsur Pelaksana - DWP Sekretariat Daerah
+Route::controller(PagesSekda::class)->prefix('sekda/')->name('sekda.pages.')->group(function () {
+    Route::get('/berita', 'news')->name('news');
+    Route::get('/berita/{slug}', 'news_detail')->name('news-detail');
+    Route::get('/contact-us', 'contact_us')->name('contact-us');
+    Route::post('/contact-us/submit', 'contact_us_submit')->name('contact-us.submit');
+    Route::get('sejarah', 'history')->name('history');
+    Route::get('visi-misi', 'vision_mission')->name('vision-mission');
+    Route::get('tugas-fungsi', 'task_functions')->name('task-functions');
+    Route::get('struktur-organisasi', 'organization')->name('organization');
+    Route::get('pendidikan', 'education')->name('education');
+    Route::get('sosial-budaya', 'socio_cultural')->name('socio-cultural');
+    Route::get('ekonomi', 'economy')->name('economy');
+    Route::get('galeri-foto', 'gallery_photo')->name('gallery-photo');
+    Route::get('galeri-video', 'gallery_video')->name('gallery-video');
+    Route::get('informasi-eksternal', 'external_information')->name('external-information');
+    Route::get('informasi-internal', 'internal_information')->name('internal-information');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
