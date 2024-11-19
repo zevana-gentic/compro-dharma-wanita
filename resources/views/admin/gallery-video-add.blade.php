@@ -1,7 +1,4 @@
 @extends('layouts.admin-dashboard')
-@section('title')
-    Tambah Berita
-@endsection
 
 @section('css')
     <style>
@@ -43,8 +40,13 @@
                         @csrf
                         <div class="mb-3">
                             <label for="video" class="form-label">Link Video<span class="text-sm text-danger">*</span></label>
-                            <textarea class="form-control" name="video" cols="30" rows="10">{{ old('video') }}</textarea>
-                            <small class="text-primary">(Link Video embed dari Youtube)</small>
+                            <div class="">
+                                <small class="text-primary">(Link Video embed dari Youtube)</small>
+                            </div>
+                            <textarea class="form-control" name="video" cols="30" rows="10" placeholder="<iframe width='' height='' src=.....</iframe>">{{ old('video') }}</textarea>
+                            @error('video')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('gallery.video.list') }}" class="btn btn-secondary mr-2">Kembali</a>

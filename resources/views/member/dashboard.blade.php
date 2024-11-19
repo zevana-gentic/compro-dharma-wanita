@@ -1,7 +1,4 @@
 @extends('layouts.member-dashboard')
-@section('title')
-    Dashboard Member
-@endsection
 
 @section('content')
     <div class="page-content">

@@ -1,7 +1,4 @@
 @extends('layouts.member-dashboard')
-@section('title')
-    Edit Profil
-@endsection
 
 @section('content')
     <div class="page-content">

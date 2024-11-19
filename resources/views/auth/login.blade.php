@@ -1,9 +1,5 @@
 @extends('layouts.auth')
 
-@section('title')
-    Masuk
-@endsection
-
 @section('content')
     @if ($message = Session::get('error'))
         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">

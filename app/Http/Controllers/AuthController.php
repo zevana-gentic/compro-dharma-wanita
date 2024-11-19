@@ -14,7 +14,9 @@ class AuthController extends Controller
 {
     public function login()
     {
-        return view('auth.login');
+        $data['page_title'] = 'Login';
+
+        return view('auth.login', $data);
     }
 
     public function login_submit(Request $request)
@@ -30,6 +32,8 @@ class AuthController extends Controller
                 return redirect()->route('admin.dashboard');
             } elseif (Auth::user()->role == 2) {
                 return redirect()->route('member.dashboard');
+            } elseif (Auth::user()->role == 3) {
+                return redirect()->route('sekda.dashboard');
             }
 
         }
@@ -41,7 +45,9 @@ class AuthController extends Controller
 
     public function register()
     {
-        return view('auth.register');
+        $data['page_title'] = 'Register';
+
+        return view('auth.register', $data);
     }
 
     public function register_submit(Request $request)

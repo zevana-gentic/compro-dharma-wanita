@@ -18,6 +18,9 @@ use App\Http\Controllers\Member\DashboardController as DashboardMember;
 
 // DWP Sekda
 use App\Http\Controllers\Sekda\PagesController as PagesSekda;
+use App\Http\Controllers\Sekda\DashboardController as DashboardSekda;
+use App\Http\Controllers\Sekda\GalleryController as GallerySekda;
+use App\Http\Controllers\Sekda\NewsController as NewsSekda;
 
 
 /*
@@ -136,3 +139,33 @@ Route::middleware(['auth', 'member'])->group(function () {
     });
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('sekda/')->name('sekda.')->group(function () {
+        Route::get('dashboard', [DashboardSekda::class, 'dashboard'])->name('dashboard');
+
+        Route::name('news.')->group(function () {
+            Route::get('news-list', [NewsSekda::class, 'news_list'])->name('list');
+            Route::get('news-add', [NewsSekda::class, 'news_add'])->name('add');
+            Route::post('news-submit', [NewsSekda::class, 'news_submit'])->name('submit');
+            Route::get('news-edit/{id}', [NewsSekda::class, 'news_edit'])->name('edit');
+            Route::post('news-update/{id}', [NewsSekda::class, 'news_update'])->name('update');
+            Route::post('news-delete/{id}', [NewsSekda::class, 'news_delete'])->name('delete');
+        });
+
+        Route::name('gallery.')->group(function () {
+            Route::get('photo-list', [GallerySekda::class, 'photo_list'])->name('photo.list');
+            Route::get('photo-add', [GallerySekda::class, 'photo_add'])->name('photo.add');
+            Route::post('photo-submit', [GallerySekda::class, 'photo_submit'])->name('photo.submit');
+            Route::get('photo-edit/{id}', [GallerySekda::class, 'photo_edit'])->name('photo.edit');
+            Route::post('photo-update/{id}', [GallerySekda::class, 'photo_update'])->name('photo.update');
+            Route::post('photo-delete/{id}', [GallerySekda::class, 'photo_delete'])->name('photo.delete');
+
+            Route::get('video-list', [GallerySekda::class, 'video_list'])->name('video.list');
+            Route::get('video-add', [GallerySekda::class, 'video_add'])->name('video.add');
+            Route::post('video-submit', [GallerySekda::class, 'video_submit'])->name('video.submit');
+            Route::get('video-edit/{id}', [GallerySekda::class, 'video_edit'])->name('video.edit');
+            Route::post('video-update/{id}', [GallerySekda::class, 'video_update'])->name('video.update');
+            Route::post('video-delete/{id}', [GallerySekda::class, 'video_delete'])->name('video.delete');
+        });
+    });
+});

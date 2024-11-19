@@ -1,7 +1,4 @@
 @extends('layouts.admin-dashboard')
-@section('title')
-    List Berita
-@endsection
 
 @section('content')
 <div class="page-content">

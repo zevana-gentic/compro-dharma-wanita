@@ -12,6 +12,8 @@ class PagesController extends Controller
 {
     public function index()
     {
+        $data['page_title'] = 'Beranda';
+
         $data['sliders'] = Slider::get();
         $data['news'] = News::latest()->limit(4)->get();
         $data['photos'] = Gallery::where('category', 'Foto')->latest()->limit(10)->get();
@@ -151,7 +153,7 @@ class PagesController extends Controller
     public function gallery_photo()
     {
         $data['page_title'] = 'Galeri';
-        $data['page_sub_title'] = 'Galeri Foto';
+        $data['page_sub_title'] = 'Foto';
         $data['gallery_photos'] = Gallery::where('category', 'Foto')->paginate(6)->withQueryString();
 
         return view('gallery.photo', $data);
@@ -160,7 +162,7 @@ class PagesController extends Controller
     public function gallery_video()
     {
         $data['page_title'] = 'Galeri';
-        $data['page_sub_title'] = 'Galeri Video';
+        $data['page_sub_title'] = 'Video';
         $data['gallery_videos'] = Gallery::where('category', 'Video')->paginate(4)->withQueryString();
 
         return view('gallery.video', $data);
@@ -169,7 +171,7 @@ class PagesController extends Controller
     public function external_information()
     {
         $data['page_title'] = 'Informasi';
-        $data['page_sub_title'] = 'Informasi Eksternal';
+        $data['page_sub_title'] = 'Eksternal';
 
         return view('information.external', $data);
     }
@@ -177,7 +179,7 @@ class PagesController extends Controller
     public function internal_information()
     {
         $data['page_title'] = 'Informasi';
-        $data['page_sub_title'] = 'Informasi Internal';
+        $data['page_sub_title'] = 'Internal';
 
         return view('information.internal', $data);
     }

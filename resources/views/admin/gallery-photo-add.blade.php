@@ -1,7 +1,4 @@
 @extends('layouts.admin-dashboard')
-@section('title')
-    Tambah Berita
-@endsection
 
 @section('css')
     <style>

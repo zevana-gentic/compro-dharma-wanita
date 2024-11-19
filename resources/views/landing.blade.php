@@ -1,9 +1,5 @@
 @extends('layouts.main')
 
-@section('title')
-    Beranda
-@endsection
-
 @section('content')
     <!-- Carousel -->
     <section class="carousel">

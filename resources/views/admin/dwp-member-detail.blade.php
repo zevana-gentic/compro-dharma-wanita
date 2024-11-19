@@ -1,7 +1,4 @@
 @extends('layouts.admin-dashboard')
-@section('title')
-    Detail Anggota DWP
-@endsection
 
 @section('content')
     <div class="page-content">

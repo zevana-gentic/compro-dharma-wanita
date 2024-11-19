@@ -1,9 +1,5 @@
 @extends('layouts.auth')
 
-@section('title')
-    Daftar
-@endsection
-
 @section('content')
     @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
