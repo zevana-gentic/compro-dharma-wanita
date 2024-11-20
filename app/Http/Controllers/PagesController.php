@@ -40,13 +40,14 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Berita';
         $data['page_sub_title'] = 'Berita Terbaru';
-        $data['news'] = News::latest()->paginate(10)->withQueryString();
+        $data['news'] = News::where('role', '!=', '3')->latest()->paginate(10)->withQueryString();
 
         return view('news', $data);
     }
 
     public function news_detail($slug)
     {
+        $data['page_title'] = 'Detail Berita';
         $data['news'] = News::where('slug', $slug)->first();
         $data['recent_news'] = News::orderBy('created_at', 'desc')->take(3)->get();
 
@@ -154,7 +155,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Foto';
-        $data['gallery_photos'] = Gallery::where('category', 'Foto')->paginate(6)->withQueryString();
+        $data['gallery_photos'] = Gallery::where('role', '!=', '3')->where('category', 'Foto')->paginate(6)->withQueryString();
 
         return view('gallery.photo', $data);
     }
@@ -163,7 +164,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Video';
-        $data['gallery_videos'] = Gallery::where('category', 'Video')->paginate(4)->withQueryString();
+        $data['gallery_videos'] = Gallery::where('role', '!=', '3')->where('category', 'Video')->paginate(4)->withQueryString();
 
         return view('gallery.video', $data);
     }

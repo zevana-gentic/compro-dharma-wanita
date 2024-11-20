@@ -6,7 +6,7 @@
             @include('components.section-header')
             <div class="body berita-content">
                 <div class="row w-100">
-                    @foreach ($news as $item)
+                    @forelse ($news as $item)
                         <div class="col-md-3">
                             <div class="card my-3">
                                 <img src="{{ asset('uploads/'. $item->image_thumbnail) }}" class="img-berita" alt="" />
@@ -29,7 +29,9 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <div class="text-center">Belum ada data berita.</div>
+                    @endforelse
                     @if ($news->count() > 0)
                         <div class="mt-5">
                             {{ $news->links('components.pagination') }}

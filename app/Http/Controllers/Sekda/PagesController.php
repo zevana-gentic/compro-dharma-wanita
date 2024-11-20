@@ -47,7 +47,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Berita';
         $data['page_sub_title'] = 'Berita Terbaru';
-        $data['news'] = News::latest()->paginate(10)->withQueryString();
+        $data['news'] = News::where('role', '3')->latest()->paginate(10)->withQueryString();
 
         return view('sekda.news', $data);
     }
@@ -105,7 +105,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Foto';
-        $data['gallery_photos'] = Gallery::where('category', 'Foto')->paginate(6)->withQueryString();
+        $data['gallery_photos'] = Gallery::where('role', '3')->where('category', 'Foto')->paginate(6)->withQueryString();
 
         return view('sekda.photo', $data);
     }
@@ -114,7 +114,7 @@ class PagesController extends Controller
     {
         $data['page_title'] = 'Galeri';
         $data['page_sub_title'] = 'Galeri Video';
-        $data['gallery_videos'] = Gallery::where('category', 'Video')->paginate(4)->withQueryString();
+        $data['gallery_videos'] = Gallery::where('role', '3')->where('category', 'Video')->paginate(4)->withQueryString();
 
         return view('sekda.video', $data);
     }
