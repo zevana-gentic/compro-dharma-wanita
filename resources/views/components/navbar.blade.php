@@ -35,7 +35,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('sekda.pages.history') }}" target="_blank">Sekretariat</a>
+                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('sekda.pages.history') }}" target="_blank">Sekretariat Daerah</a>
                             </li>
                             <li><a class="dropdown-item {{ Route::is('pages.inspectorate') ? 'active' : '' }}" href="">Badan dan Dinas</a></li>
                             <li>
