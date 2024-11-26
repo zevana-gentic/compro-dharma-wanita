@@ -35,11 +35,14 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('sekda.pages.history') }}" target="_blank">DWP Sekretariat Daerah</a>
+                                <a class="dropdown-item {{ Route::is('pages.secretariat') ? 'active' : '' }}" href="{{ route('sekda.pages.history') }}" target="_blank">Sekretariat</a>
                             </li>
-                            <li><a class="dropdown-item {{ Route::is('pages.inspectorate') ? 'active' : '' }}" href="">DWP Inspektorat</a></li>
+                            <li><a class="dropdown-item {{ Route::is('pages.inspectorate') ? 'active' : '' }}" href="">Badan dan Dinas</a></li>
                             <li>
-                                <a class="dropdown-item {{ Route::is('pages.education-office') ? 'active' : '' }}" href="">DWP Dinas Pendidikan</a>
+                                <a class="dropdown-item {{ Route::is('pages.education-office') ? 'active' : '' }}" href="">Kecamatan</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item {{ Route::is('pages.education-office') ? 'active' : '' }}" href="">Instansi Lainnya</a>
                             </li>
                             {{-- <li><a class="dropdown-item" href="#">Dst</a></li> --}}
                         </ul>
@@ -90,9 +93,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">Daftar</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 {{-- @else
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
