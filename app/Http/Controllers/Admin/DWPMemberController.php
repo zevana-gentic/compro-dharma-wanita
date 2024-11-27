@@ -10,7 +10,8 @@ class DWPMemberController extends Controller
 {
     public function dwp_member_list(Request $request)
     {
-        $member = User::where('role', '!=','1');
+        $data['page_title'] = 'List Anggota DWP';
+        $member = User::where('role', '2');
 
         if ($request->q) {
             $member = $member->where('name',  'LIKE', '%' . $request->q . '%')

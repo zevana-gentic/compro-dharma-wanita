@@ -15,6 +15,7 @@ class GalleryController extends Controller
     // Photo
     public function photo_list()
     {
+        $data['page_title'] = 'List Data Galeri - Foto';
         $data['photos'] = Gallery::where('category', 'Foto')->paginate(10)->withQueryString();
 
         return view('admin.gallery-photo-list', $data);
@@ -105,6 +106,7 @@ class GalleryController extends Controller
     // Video
     public function video_list()
     {
+        $data['page_title'] = 'List Data Galeri - Video';
         $data['videos'] = Gallery::where('category', 'Video')->paginate(10)->withQueryString();
         return view('admin.gallery-video-list' ,$data);
     }

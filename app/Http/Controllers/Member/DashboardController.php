@@ -15,11 +15,15 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        return view('member.dashboard');
+        $data['page_title'] = 'Dashboard Member';
+
+        return view('member.dashboard', $data);
     }
 
     public function profil_edit()
     {
+        $data['page_title'] = 'Edit Profil Member';
+
         $data['profile'] = Member::where('user_id', Auth::id())->first();
 
         return view('member.profil', $data);

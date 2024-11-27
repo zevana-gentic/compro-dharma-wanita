@@ -15,6 +15,7 @@ class NewsController extends Controller
 {
     public function news_list(Request $request)
     {
+        $data['page_title'] = 'List Berita';
         $news = News::latest();
 
         if ($request->category) {

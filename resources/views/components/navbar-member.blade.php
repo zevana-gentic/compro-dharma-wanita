@@ -4,7 +4,7 @@
     </a>
     <div class="navbar-content">
         <ul class="navbar-nav">
-            <li class="nav-item dropdown nav-notifications">
+            {{-- <li class="nav-item dropdown nav-notifications">
                 <a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i data-feather="bell"></i>
@@ -68,7 +68,7 @@
                         <a href="javascript:;">View all</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
             <li class="nav-item dropdown nav-profile">
                 <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

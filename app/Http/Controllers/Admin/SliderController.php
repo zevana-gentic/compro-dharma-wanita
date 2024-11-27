@@ -14,6 +14,7 @@ class SliderController extends Controller
 {
     public function slider_list()
     {
+        $data['page_title'] = 'List Slider';
         $data['sliders'] = Slider::get();
 
         return view('admin.slider-list', $data);
