@@ -15,6 +15,7 @@ class Gallery extends Model
         'role',
         'category',
         'photo',
-        'video'
+        'video',
+        'short_desc'
     ];
 }

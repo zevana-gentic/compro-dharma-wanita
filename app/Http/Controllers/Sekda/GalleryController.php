@@ -34,9 +34,11 @@ class GalleryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'photo'   => 'mimes:jpg,jpeg,png|max:2048',
+            'short_desc'    => 'required'
         ],[
             'photo.mimes'    => 'Format file salah. Format file harus JPG atau PNG.',
             'photo.max'      => 'Ukuran file terlalu besar. Ukuran maksimum file adalah 2MB (2048KB).',
+            'short_desc.required'   => 'Keterangan Gambar wajib diisi.'
         ]);
 
         if ($validator->fails()) {
@@ -51,8 +53,11 @@ class GalleryController extends Controller
             $data['photo'] = $filename;
         }
 
-        $data['role'] = Auth::user()->role;
-        $data['category'] = 'Foto';
+        $data = [
+            'role'       => Auth::user()->role,
+            'category'   => 'Foto',
+            'short_desc' => $request->short_desc
+        ];
 
         Gallery::create($data);
 
@@ -74,9 +79,11 @@ class GalleryController extends Controller
 
         $validator = Validator::make($request->all(), [
             'photo'          => 'mimes:jpg,jpeg,png|max:2048',
+            'short_desc'    => 'required'
         ],[
             'photo.mimes'    => 'Format file salah. Format file harus JPG atau PNG.',
             'photo.max'      => 'Ukuran file terlalu besar. Ukuran maksimum file adalah 2MB (2048KB).',
+            'short_desc.required'   => 'Keterangan Gambar wajib diisi.'
         ]);
 
         if ($validator->fails()) {
@@ -94,8 +101,11 @@ class GalleryController extends Controller
             }
         }
 
-        $data['role'] = Auth::user()->role;
-        $data['category'] = 'Foto';
+        $data = [
+            'role'       => Auth::user()->role,
+            'category'   => 'Foto',
+            'short_desc' => $request->short_desc
+        ];
 
         $gallery_photo->update($data);
 

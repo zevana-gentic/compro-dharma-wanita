@@ -15,6 +15,9 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen class="mx-1 my-1"></iframe>
                 @endforeach
+                @if ($gallery_videos->count() < 1)
+                    <div class="body text-center">Belum ada data video.</div>
+                @endif
             </div>
             @if ($gallery_videos->count() > 0)
                 <div class="my-5">

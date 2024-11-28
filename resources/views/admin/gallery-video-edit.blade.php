@@ -43,7 +43,7 @@
                             <div class="">
                                 <small class="text-primary">(Link Video embed dari Youtube)</small>
                             </div>
-                            <textarea class="form-control" name="video" cols="30" rows="10" placeholder="<iframe width='' height='' src=.....</iframe>">{{ $gallery_video->video }}</textarea>
+                            <textarea class="form-control" name="video" cols="30" rows="10" placeholder="Contoh: https://www.youtube.com/embed.....">{{ $gallery_video->video }}</textarea>
                             @error('video')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror

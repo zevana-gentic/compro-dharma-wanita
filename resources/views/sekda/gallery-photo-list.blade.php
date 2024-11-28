@@ -37,6 +37,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Gambar</th>
+                                <th>Keterangan Gambar</th>
                                 <th>Tanggal Posting</th>
                                 <th>Aksi</th>
                             </tr>
@@ -50,6 +51,7 @@
                                             <div class="card-body" style="width: 100%; height: 200px; background-image: url('{{ asset('uploads/'. $item->photo) }}'); background-size: cover; background-position: center; "></div>
                                         </div>
                                     </td>
+                                    <td>{{ @$item->short_desc }}</td>
                                     <td>{{ date_format($item->created_at, "d M Y") }}</td>
                                     <td>
                                         <a class="btn btn-success btn-icon btn-edit mr-2" href="{{ route('sekda.gallery.photo.edit', $item->id) }}"><i data-feather="edit"></i></a>

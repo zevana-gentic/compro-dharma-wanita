@@ -46,6 +46,13 @@
                             <input name="photo" type="file" class="form-control" id="myDropify" data-default-file="{{ asset('uploads/'.$gallery_photo->photo) }}"">
                             <small class="text-primary">(Format: jpg, jpeg atau png. Ukuran gambar maks. 2MB. Gambar menggunakan layout landscape)</small>
                         </div>
+                        <div class="mb-3">
+                            <label for="short_desc">Keterangan Gambar<span class="text-sm text-danger">*</span></label>
+                            <textarea class="form-control" name="short_desc">{{ @$gallery_photo->short_desc }}</textarea>
+                            @error('short_desc')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
                         <div class="d-flex justify-content-end">
                             <a href="{{ route('sekda.gallery.photo.list') }}" class="btn btn-secondary mr-2">Kembali</a>
                             <button type="submit" class="btn btn-primary">Ubah</button>

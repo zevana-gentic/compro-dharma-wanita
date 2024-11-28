@@ -46,7 +46,10 @@
                                 <tr>
                                     <td class="text-wrap text-capitalize">{{ ($videos->currentPage() - 1) * $videos->perPage() + $loop->iteration }}</td>
                                     <td>
-                                        {!! $item->video !!}
+                                        <iframe width="400" height="250" src="{{ @$item->video }}"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                            allowfullscreen class="mx-1 my-1"></iframe>
                                     </td>
                                     <td>{{ date_format($item->created_at, "d M Y") }}</td>
                                     <td>

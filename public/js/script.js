@@ -23,5 +23,6 @@ $(".owl-carousel").owlCarousel({
 let gallery = document.getElementById('gallery')
 lightGallery(gallery, {
     controls: true,
+    subHtmlSelectorRelative: true,
     plugins: [lgThumbnail]
 })

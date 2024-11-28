@@ -16,7 +16,7 @@ class NewsController extends Controller
     public function news_list(Request $request)
     {
         $data['page_title'] = 'List Berita';
-        $news = News::latest();
+        $news = News::latest()->where('role', '1');
 
         if ($request->category) {
             $news = $news->where('category', $request->category);
@@ -64,7 +64,7 @@ class NewsController extends Controller
         }
 
         $data = $request->all();
-
+        $data['role'] = Auth::user()->role;
         $data['slug'] = Str::slug($request->title).'-'.Str::random(5);
 
         if ($request->image_thumbnail) {
@@ -112,6 +112,7 @@ class NewsController extends Controller
         }
 
         $data = $request->all();
+        $data['role'] = Auth::user()->role;
 
         $data['slug'] = Str::slug($request->title);
 

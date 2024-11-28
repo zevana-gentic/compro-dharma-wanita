@@ -16,7 +16,7 @@ class GalleryController extends Controller
     public function photo_list()
     {
         $data['page_title'] = 'List Data Galeri - Foto';
-        $data['photos'] = Gallery::where('category', 'Foto')->paginate(10)->withQueryString();
+        $data['photos'] = Gallery::where('role', '1')->where('category', 'Foto')->paginate(10)->withQueryString();
 
         return view('admin.gallery-photo-list', $data);
     }
@@ -30,13 +30,15 @@ class GalleryController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'photo'   => 'mimes:jpg,jpeg,png|max:2048',
+            'short_desc'    => 'required'
         ],[
             'photo.mimes'    => 'Format file salah. Format file harus JPG atau PNG.',
             'photo.max'      => 'Ukuran file terlalu besar. Ukuran maksimum file adalah 2MB (2048KB).',
+            'short_desc.required'   => 'Keterangan Gambar wajib diisi.'
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
+            return redirect()->route('gallery.photo.add')
                 ->withErrors($validator)
                 ->withInput()
                 ->with('error', 'Terjadi kesalahan saat pengisian form. Data yang masih salah akan ditandai dengan tulisan merah, silahkan cek kembali form Anda.');
@@ -47,7 +49,11 @@ class GalleryController extends Controller
             $data['photo'] = $filename;
         }
 
-        $data['category'] = 'Foto';
+        $data = [
+            'role'       => Auth::user()->role,
+            'category'   => 'Foto',
+            'short_desc' => $request->short_desc
+        ];
 
         Gallery::create($data);
 
@@ -67,13 +73,15 @@ class GalleryController extends Controller
 
         $validator = Validator::make($request->all(), [
             'photo'          => 'mimes:jpg,jpeg,png|max:2048',
+            'short_desc'    => 'required'
         ],[
             'photo.mimes'    => 'Format file salah. Format file harus JPG atau PNG.',
             'photo.max'      => 'Ukuran file terlalu besar. Ukuran maksimum file adalah 2MB (2048KB).',
+            'short_desc.required'   => 'Keterangan Gambar wajib diisi.'
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()
+            return redirect()->route('gallery.photo.edit', ['id' => $gallery_photo->id])
                 ->withErrors($validator)
                 ->withInput()
                 ->with('error', 'Terjadi kesalahan saat pengisian form. Data yang masih salah akan ditandai dengan tulisan merah, silahkan cek kembali form Anda.');
@@ -87,7 +95,11 @@ class GalleryController extends Controller
             }
         }
 
-        $data['category'] = 'Foto';
+        $data = [
+            'role'       => Auth::user()->role,
+            'category'   => 'Foto',
+            'short_desc' => $request->short_desc
+        ];
 
         $gallery_photo->update($data);
 
@@ -107,7 +119,7 @@ class GalleryController extends Controller
     public function video_list()
     {
         $data['page_title'] = 'List Data Galeri - Video';
-        $data['videos'] = Gallery::where('category', 'Video')->paginate(10)->withQueryString();
+        $data['videos'] = Gallery::where('role', '1')->where('category', 'Video')->paginate(10)->withQueryString();
         return view('admin.gallery-video-list' ,$data);
     }
 
@@ -132,6 +144,7 @@ class GalleryController extends Controller
         }
 
         $data['video'] = $request->video;
+        $data['role'] = Auth::user()->role;
         $data['category'] = 'Video';
 
         Gallery::create($data);
@@ -164,6 +177,7 @@ class GalleryController extends Controller
         }
 
         $data['video'] = $request->video;
+        $data['role'] = Auth::user()->role;
         $data['category'] = 'Video';
 
         $gallery_video->update($data);
