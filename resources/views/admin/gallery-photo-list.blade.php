@@ -72,7 +72,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td class="text-center" colspan="4">Belum ada data foto.</td>
+                                    <td class="text-center" colspan="5">Belum ada data foto.</td>
                                 </tr>
                             @endforelse
                         </tbody>
