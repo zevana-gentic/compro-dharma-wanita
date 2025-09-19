@@ -45,16 +45,16 @@ class GalleryController extends Controller
                 ->with('error', 'Terjadi kesalahan saat pengisian form. Data yang masih salah akan ditandai dengan tulisan merah, silahkan cek kembali form Anda.');
         }
 
-        if ($request->hasFile('photo')) {
-            $filename = Storage::disk('public_uploads')->put('gallery-photos', $request->file('photo'));
-            $data['photo'] = $filename;
-        }
-
         $data = [
             'role'       => Auth::user()->role,
             'category'   => 'Foto',
             'short_desc' => $request->short_desc
         ];
+
+        if ($request->hasFile('photo')) {
+            $filename = Storage::disk('public_uploads')->put('gallery-photos', $request->file('photo'));
+            $data['photo'] = $filename;
+        }
 
         Gallery::create($data);
 
@@ -88,6 +88,12 @@ class GalleryController extends Controller
                 ->with('error', 'Terjadi kesalahan saat pengisian form. Data yang masih salah akan ditandai dengan tulisan merah, silahkan cek kembali form Anda.');
         }
 
+        $data = [
+            'role'       => Auth::user()->role,
+            'category'   => 'Foto',
+            'short_desc' => $request->short_desc
+        ];
+
         if ($request->hasFile('photo')) {
             $filename = Storage::disk('public_uploads')->put('gallery-photos', $request->file('photo'));
             $data['photo'] = $filename;
@@ -95,12 +101,6 @@ class GalleryController extends Controller
                 File::delete('./uploads/'.$gallery_photo->photo);
             }
         }
-
-        $data = [
-            'role'       => Auth::user()->role,
-            'category'   => 'Foto',
-            'short_desc' => $request->short_desc
-        ];
 
         $gallery_photo->update($data);
 
