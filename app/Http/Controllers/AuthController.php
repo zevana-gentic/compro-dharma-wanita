@@ -21,9 +21,19 @@ class AuthController extends Controller
 
     public function login_submit(Request $request)
     {
+        $request->validate([
+            'g-recaptcha-response'  => 'required|captcha',
+            'pot'                   => 'prohibited'
+        ], [
+            'g-recaptcha-response' => [
+                'required' => 'Please verify that you are not a robot.',
+                'captcha'  => 'Captcha error! try again later or contact site admin.',
+            ],
+        ]);
+
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+            'email'                 => ['required', 'email'],
+            'password'              => ['required'],
         ]);
 
         if (Auth::attempt($credentials)) {
@@ -35,7 +45,6 @@ class AuthController extends Controller
             } elseif (Auth::user()->role == 3) {
                 return redirect()->route('sekda.dashboard');
             }
-
         }
 
         return redirect()->route('login')->with([

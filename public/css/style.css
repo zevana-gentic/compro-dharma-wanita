@@ -328,8 +328,9 @@ header {
 
 .carousel-body .title {
     font-family: var(--font-primary);
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: 700;
+    max-width: 60%;
 }
 
 .carousel-body p {

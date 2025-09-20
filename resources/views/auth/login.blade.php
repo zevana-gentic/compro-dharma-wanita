@@ -27,8 +27,18 @@
                 </span>
             </div>
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
             <a href="" class="text-decoration-none" style="color:#FFBB5C;"><b>Lupa Password</b></a>
+        </div> --}}
+        <div class="d-none"><input class="form-control" type="text" name="pot"></div>
+        <div class="mb-5">
+            <label class="col-form-label"></label>
+            <div class="d-flex justify-content-center">
+                {!! NoCaptcha::display() !!}
+            </div>
+            @error('g-recaptcha-response')
+                <div class="text-danger text-center">{{ $message }}</div>
+            @enderror
         </div>
         <div class="mb-3">
             <button type="submit" class="btn-auth fw-bold w-100">Masuk</button>
@@ -38,16 +48,17 @@
 @endsection
 
 @section('js')
-<script>
-    $(".toggle-password").click(function() {
-       $(this).toggleClass("fa-eye fa-eye-slash");
-       var input = $($(this).attr("toggle"));
+    {!! NoCaptcha::renderJs() !!}
+    <script>
+        $(".toggle-password").click(function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
 
-       if (input.attr("type") == "password") {
-           input.attr("type", "text");
-       } else {
-           input.attr("type", "password");
-       }
-   });
-</script>
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    </script>
 @endsection
