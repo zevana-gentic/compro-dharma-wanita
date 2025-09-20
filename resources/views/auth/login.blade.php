@@ -34,7 +34,7 @@
             <button type="submit" class="btn-auth fw-bold w-100">Masuk</button>
         </div>
     </form>
-    <p class="text-center">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none" style="color:#FFBB5C;"><b>Daftar</b></a></p>
+    {{-- <p class="text-center">Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none" style="color:#FFBB5C;"><b>Daftar</b></a></p> --}}
 @endsection
 
 @section('js')

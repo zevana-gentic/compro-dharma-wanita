@@ -39,8 +39,8 @@ use App\Http\Controllers\Sekda\NewsController as NewsSekda;
 Route::controller(AuthController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::post('/login/submit', 'login_submit')->name('login.submit');
-    Route::get('/register', 'register')->name('register');
-    Route::post('/register/submit', 'register_submit')->name('register.submit');
+    // Route::get('/register', 'register')->name('register');
+    // Route::post('/register/submit', 'register_submit')->name('register.submit');
     Route::get('/logout', 'logout')->name('logout');
 });
 
