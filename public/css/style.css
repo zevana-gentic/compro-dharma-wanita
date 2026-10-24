@@ -362,7 +362,7 @@ header {
 
 /* About */
 .about {
-    min-height: 650px;
+    min-height: 480px;
     display: flex;
 }
 
@@ -379,10 +379,12 @@ header {
 }
 
 .img-about {
+    max-width: 180px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.08));
 }
 
 .about p {
